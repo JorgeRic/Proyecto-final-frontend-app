@@ -35,7 +35,7 @@ class PrivateList extends Component {
               <PrivateCard   
                 title={vivienda.title} 
                 clase={vivienda.clase}
-                image={vivienda.image} 
+                images={vivienda.images}
                 type={vivienda.type} 
                 city={vivienda.ciudad}
                 direccion={vivienda.direccion}
@@ -47,7 +47,7 @@ class PrivateList extends Component {
                 numGarajes={vivienda.numGarajes}
                 piscina={vivienda.piscina}
                 jardin={vivienda.jardin}
-                descripcion={vivienda.description}
+                description={vivienda.description}
                 nombrePropietario={vivienda.nombrePropietario}
                 telefonoPropietario={vivienda.telefonoPropietario}
                 mailPropietario={vivienda.mailPropietario}

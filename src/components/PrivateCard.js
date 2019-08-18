@@ -4,7 +4,9 @@ export default function PrivateCard(props) {
   return (
     <div>
         <h3>{props.title}</h3>
-              <img src={props.image} alt={props.title}></img>
+          {props.images.map((img) => {
+                return (<img key={img} src={img}/>)
+          })}
               <p>{props.clase}</p>
               <p>Tipo de vivienda: {props.type}</p>
               <p>Precio: {props.price}</p>
@@ -21,9 +23,6 @@ export default function PrivateCard(props) {
               <p>Nombre del propietario: {props.nombrePropietario}</p>
               <p>Telefono del propietario: {props.telefonoPropietario}</p>
               <p>Mail del propietario: {props.mailPropietario}</p>
-             
-
-
     </div>
       )
     }
