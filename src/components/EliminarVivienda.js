@@ -46,16 +46,12 @@ class EliminarVivienda extends Component {
           {viviendas.length > 0 ? viviendas.map((vivienda) => {
             return (
               <article key = {vivienda._id}>
-                <h3>{vivienda.title}</h3>
-              <p>{vivienda.clase}</p>
-              <img src={vivienda.image} alt={vivienda.title}></img>
-              <p>{vivienda.type}</p>
-              <p>{vivienda.price}</p>
-              <p>{vivienda.city}</p>
-              <p>{vivienda.numHab}</p>
-              <p>{vivienda.numAseos}</p>
-              <p>{vivienda.referencia}</p>
-              <p>{vivienda.description}</p>
+              <h3>Numero de referencia: {vivienda.referencia}</h3>
+              <p>Titulo: {vivienda.titulo}</p>
+              <p>Vivienda en: {vivienda.clase}</p>
+              <p>Tipo de vivienda: {vivienda.tipo}</p>
+              <p>Precio: {vivienda.precio}</p>
+              <p>Ciudad: {vivienda.ciudad}</p>
                 <button onClick = {() => {
                 this.handleDeleteClick(vivienda._id)
                  }}>Eliminar</button>

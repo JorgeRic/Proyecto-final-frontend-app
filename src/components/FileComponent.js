@@ -3,10 +3,6 @@ import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
  
 class FileUploadComponent extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   state = {
     isUploading: false,
     progress: 0,

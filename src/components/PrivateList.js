@@ -31,15 +31,16 @@ class PrivateList extends Component {
           <Link to='/searchreferencia'><button>Buscar por referencia</button></Link>
             {viviendas.length > 0 ? viviendas.map((vivienda)=>{
               return ( <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
-
+                
+              <p>Numero de viviendas en cartera: {viviendas.length}</p>
               <PrivateCard   
-                title={vivienda.title} 
+                titulo={vivienda.titulo} 
                 clase={vivienda.clase}
-                images={vivienda.images}
-                type={vivienda.type} 
-                city={vivienda.ciudad}
+                imagenes={vivienda.imagenes}
+                tipo={vivienda.tipo} 
+                ciudad={vivienda.ciudad}
                 direccion={vivienda.direccion}
-                price={vivienda.price} 
+                precio={vivienda.precio} 
                 metros={vivienda.metros}
                 numHab={vivienda.numHab} 
                 numAseos={vivienda.numAseos} 
@@ -47,7 +48,7 @@ class PrivateList extends Component {
                 numGarajes={vivienda.numGarajes}
                 piscina={vivienda.piscina}
                 jardin={vivienda.jardin}
-                description={vivienda.description}
+                descripcion={vivienda.descripcion}
                 nombrePropietario={vivienda.nombrePropietario}
                 telefonoPropietario={vivienda.telefonoPropietario}
                 mailPropietario={vivienda.mailPropietario}

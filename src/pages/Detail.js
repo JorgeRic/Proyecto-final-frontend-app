@@ -40,10 +40,10 @@ render() {
     return (
       <div className = 'image-container'>
         <Card 
-                title={vivienda.title} 
-                image={vivienda.image} 
-                type={vivienda.type} 
-                price={vivienda.price} 
+                titulo={vivienda.titulo} 
+                imagenes={vivienda.imagenes} 
+                tipo={vivienda.tipo} 
+                precio={vivienda.precio} 
                 metros={vivienda.metros}
                 ciudad={vivienda.ciudad}
                 direccion={vivienda.direccion}

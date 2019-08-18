@@ -3,110 +3,57 @@ import viviendaBackendService from '../services/viv-backend-service'
 
 
 export default class ViviendaForm extends Component {
-  state = {
-  title: '',
-  image: '',
-  type: 'undefined',
-  ciudad: 'undefined',
-  direccion: '',
-  price: 0,
-  metros: 0,
-  numHab: 0,
-  NumAseos: 0,
-  numGarajes: 0,
-  piscina: 'undefined',
-  jardin:'undefined',
-  clase: 'indefined',
-  referencia: 0,
-  description: '',
-  nombrePropietario: '',
-  telefonoPropietario: '',
-  mailPropietario: '',
-  
-
-}
-  componentDidMount () {
-    const {title, type, image, price, clase,  numHab, numAseos, referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario, _id} = this.props.vivienda;
-    this.setState({title, type, image, clase, price, numHab, numAseos, referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario,  _id});
-  }
-
-  handelonChange= (event) => {
-    const {title, type, image, price, clase, numHab, numAseos, referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario, _id} = this.state
-    event.preventDefault();
-
-    viviendaBackendService.updateOneVivienda( _id, {
-    title,
-    image,
-    type,
-    ciudad,
-    direccion,
-    metros,
-    price,
-    piscina,
-    jardin,
-    numHab,
-    numAseos,
-    numGarajes,
-    piscina,
-    clase,
-    referencia,
-    description,
-    nombrePropietario,
-    telefonoPropietario,
-    mailPropietario
-    })
-    .then(()=> this.props.refreshData())
-   }
+  // state = this.props.vivienda;
+  state = {vivienda: this.props.vivienda};
    
   handleUpdate = (event)=> {
     const {name,value} = event.target;
+    const vivienda = this.state.vivienda;
+
+    vivienda[name] = value;
 
     this.setState({
-      [name]: value,
+      vivienda: vivienda,
     })
   }
 
+  handelSubmit= (event) => {
+    const {vivienda} = this.state
+    event.preventDefault();
+
+    viviendaBackendService.updateOneVivienda( vivienda._id, vivienda)
+    .then(()=> this.props.refreshData())
+   }
+
   render() {
 
-    const {title, type, image, price, clase, numHab, numAseos, referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario, _id } = this.state
-
+    const vivienda = this.state.vivienda;
 
     return (
       <div>
         <form onSubmit ={this.handelSubmit}>
                 
-                <p>Numero de referencia de la vivienda: {referencia}</p>
-                <p>{title}</p>         
-                <label htmlFor="title">Titulo de la vivienda</label>
+                 <h5>Numero de referencia: {vivienda.referencia}</h5>   
+
+                <label htmlFor="titulo">Titulo</label>
                  <input type="text" 
-                 id="title"
-                 defaultValue={title} 
-                 name= "title" 
-                 onChange={this.handleUpdate }
+                 id="titulo"
+                 placeholder="modificar datos ..." 
+                 name="titulo"
+                 defaultValue={vivienda.titulo}
+                 onChange={ this.handleUpdate }
                  />
 
-                <p>{clase}</p>
-                <p>{title}</p>         
-                <label htmlFor="title">Titulo de la vivienda</label>
-                 <input type="text" 
-                 id="title"
-                 defaultValue={title} 
-                 name= "title" 
-                 onChange={this.handleUpdate }
-                 />
-
-                 <img src={image} alt={title}/>
-                 <label htmlFor="image">Image</label>
-                 <input type="text" 
-                 id="image" 
-                 defaultValue={image} 
-                 name= "image" 
-                 onChange={this.handleUpdate}
-                 />
-
-                <p>Tipo de vivienda: {type}</p>
+                <label htmlFor="clase">Clase</label>
+                <select name='clase' onChange={this.handleUpdate } defaultValue={vivienda.clase} id="clase">
+                  <option value=''>modificar datos ...</option>
+                  <option value='venta'>Venta</option>
+                  <option value='alquiler'>Alquiler</option>
+                 </select> 
+            
                 <label htmlFor="type">Tipo de vivienda</label>
-                <select name='type' onChange={this.handleUpdate } value={type} id="type">
+                <select name='tipo' onChange={this.handleUpdate } defaultValue={vivienda.tipo} id="tipo">
+                  <option value=''>modificar datos ...</option>
                   <option value='Piso'>Piso</option>
                   <option value='Chalet'>Chalet</option>
                   <option value='Planta baja'>Planta baja</option>
@@ -115,9 +62,9 @@ export default class ViviendaForm extends Component {
                   <option value='Atico'>Atico</option>
                 </select>
 
-                <p>Ciudad: {ciudad}</p>
                 <label htmlFor="ciudad">Ciudad</label>
-                <select name="ciudad" onChange={this.handelOnChange } value={ciudad} id="ciudad">
+                <select name="ciudad" onChange={this.handleUpdate } defaultValue={vivienda.ciudad} id="ciudad">
+                  <option value=''>modificar datos ...</option>
                   <option value='Alicante'>Alicante</option>
                   <option value='San Vicente'>San Vicente</option>
                   <option value='San Juan'>San Juan</option>
@@ -126,110 +73,114 @@ export default class ViviendaForm extends Component {
                   <option value='Agost'>Agost</option>
                 </select>
 
-                <p>direccion de la vivienda: {direccion}</p>
                 <label htmlFor="direccion">Direccion de la vivienda</label>
                 <input type="text" 
                 id="direccion" 
-                onChange={this.handelOnChange } 
+                defaultValue={vivienda.direccion}
+                placeholder="modificar datos ..." 
+                onChange={this.handleUpdate } 
                 name= "direccion" 
-                value={direccion} 
                 />
 
-                <p>Precio: {price}</p> 
-                <label htmlFor="price">Precio</label>
+                <label htmlFor="precio">Precio actual</label>
                 <input 
                   type="number"
-                  id="price"
-                  defaultValue={price}
-                  name= "price"
+                  id="precio"
+                  defaultValue={vivienda.precio}
+                  placeholder="modificar datos ..." 
+                  name= "precio"
                   onChange={this.handleUpdate}
                 />
                 
-                <p>Metros cuadrados de la vivienda: {metros}</p>
                 <label htmlFor="metros">Metros de la vivienda</label>
                 <input type="number" 
                 id="metros" 
-                onChange={this.handelOnChange } 
+                defaultValue={vivienda.metros}
+                onChange={this.handleUpdate } 
                 name= "metros" 
-                value={metros} 
+                placeholder="modificar datos ..." 
                 />
 
-
-                <p>Numero de habitaciones en la vivienda: {numHab}</p>
+                <label htmlFor="numHab">Habitaciones</label>
                 <input type="number" 
                 id="numHab" 
+                defaultValue={vivienda.numHab}
                 onChange={this.handleUpdate } 
                 name= "numHab" 
-                defaultValue={numHab} 
+                placeholder="modificar datos ..." 
                 />
 
-                <p>Numero de aseos en la vivienda: {numAseos}</p>
+                <label htmlFor="numAseos">Baños</label>
                 <input type="number" 
                 id="numAseos" 
+                defaultValue={vivienda.numAseos}
                 onChange={this.handleUpdate } 
                 name= "numAseos" 
-                defaultValue={numAseos} 
+                placeholder="modificar datos ..."  
                 />
 
-                <p>Garaje: {numGarajes}</p>
                 <label htmlFor="numGarajes">Numero de garajes</label>               
                 <input type="number" 
                 id="numGarajes" 
-                placeholder="" 
-                onChange={this.handelOnChange } 
+                defaultValue={vivienda.numGarajes}
+                placeholder="modificar datos ..." 
+                onChange={this.handleUpdate } 
                 name= "numGarajes" 
-                value={numGarajes} 
                 />
 
-                <label htmlFor="jardin">Jardin{jardin}</label>
-                <select name="jardin" onChange={this.handelOnChange } value={jardin} id="jardin">
+                <label htmlFor="jardin">Jardin</label>
+                <select name="jardin" onChange={this.handleUpdate } defaultValue={vivienda.jardin}  id="jardin">
+                  <option value=''>modificar datos ...</option>
                   <option value='Si'>Si</option>
                   <option value='No'>No</option>
                 </select>
 
-                <label htmlFor="piscina">Piscina{piscina}</label>
-                <select name="piscina" onChange={this.handelOnChange } value={piscina} id="piscina">
+                <label htmlFor="piscina">Piscina</label>
+                <select name="piscina" onChange={this.handleUpdate } defaultValue={vivienda.piscina} id="piscina">
+                  <option value=''>modificar datos ...</option>  
                   <option value='Si'>Si</option>
                   <option value='No'>No</option>
                 </select>
 
-                  <p>Datos de contacto:</p>
-
-               <label htmlFor="nombrePropietario">Nombre del propietario {nombrePropietario}</label>
-               <input type="text" 
-               id="nombrePropietario" 
-               placeholder="" 
-               onChange={this.handelOnChange } 
-               name= "nombrePropietario" 
-               value={nombrePropietario} ></input>
-        
-               <label htmlFor="telefonoPropietario">TelefonoPropietario {telefonoPropietario}</label>
-               <input type="text" 
-               id="telefonoPropietario" 
-               placeholder="" 
-               onChange={this.handelOnChange } 
-               name= "telefonoPropietario" 
-               value={telefonoPropietario} ></input>
-        
-               <label htmlFor="mailPropietario">Mail del propietario {mailPropietario}</label>
-               <input type="email" 
-               id="mailPropietario" 
-               placeholder="" 
-               onChange={this.handelOnChange } 
-               name= "mailPropietario" 
-               value={mailPropietario} ></input>
-
-
-
-                <p>Descripcion de la vivienda: {description}</p>
-                <label htmlFor="description">Descripcion de la vivienda</label>
-                <input type="description" 
-                id="description" 
+                <label htmlFor="descripcion">Descripcion de la vivienda</label>
+                <input type="text" 
+                id="descripcion" 
+                defaultValue={vivienda.descripcion}
                 onChange={this.handleUpdate } 
-                name= "description" 
-                defaultValue={description} 
+                name= "descripcion" 
+                placeholder="modificar datos ..." 
                 />
             
+                  <p>Datos de contacto:</p>
+
+               <label htmlFor="nombrePropietario">Nombre del propietario</label>
+               <input type="text" 
+               id="nombrePropietario" 
+               placeholder="modificar datos ..." 
+               defaultValue={vivienda.nombrePropietario}
+               onChange={this.handleUpdate } 
+               name= "nombrePropietario" 
+               ></input>
+        
+               <label htmlFor="telefonoPropietario">TelefonoPropietario</label>
+               <input type="text" 
+               id="telefonoPropietario" 
+               placeholder="modificar datos ..." 
+               defaultValue={vivienda.telefonoPropietario}
+               onChange={this.handleUpdate } 
+               name= "telefonoPropietario" 
+               ></input>
+        
+               <label htmlFor="mailPropietario">Mail del propietario</label>
+               <input type="email" 
+               id="mailPropietario" 
+               placeholder="modificar datos ..." 
+               defaultValue={vivienda.mailPropietario}
+               onChange={this.handleUpdate } 
+               name= "mailPropietario" 
+               ></input>
+
+
   
                 <button type='submit'>Modificar</button>
               </form>
@@ -238,16 +189,16 @@ export default class ViviendaForm extends Component {
   }
 }
 
-//         <label htmlFor="image">Image</label>
-//         <input type="text" id="image" placeholder="" value={image} name= "image" onChange={this.handleOnChange }></input>
+//         <label htmlFor="imagenes">Image</label>
+//         <input type="text" id="image" defaultValue={vivienda.image} name= "image" onChange={this.handleOnChange }></input>
 //        
 //      
 //         
 //         <label htmlFor="numHab">Numero de habitaciones</label>
-//         <input type="number" id="numHab" placeholder="" onChange={this.handleOnChange } name= "numHab" value={numHab} ></input>
+//         <input type="number" id="numHab" onChange={this.handleOnChange } name= "numHab" defaultValue={vivienda.numHab} ></input>
 //         <label htmlFor="referencia">Numero de referencia</label>
-//         <input type="number" id="referencia" placeholder="" onChange={this.handleOnChange } name= "referencia" value={referencia} ></input>
+//         <input type="number" id="referencia" placeholder="" onChange={this.handleOnChange } name= "referencia" defaultValue={vivienda.referencia} ></input>
 //         <label htmlFor="numAseos">Baños</label>
-//         <input type="number" id="numAseos" placeholder="" onChange={this.handleOnChange } name= "numAseos" value={numAseos} ></input>
+//         <input type="number" id="numAseos" placeholder="" onChange={this.handleOnChange } name= "numAseos" defaultValue={vivienda.numAseos} ></input>
 //         <label htmlFor="description">Descripcion de la vivienda</label>
-//         <input type="description" id="description" placeholder="" onChange={this.handleOnChange } name= "description" value={description} ></input>
+//         <input type="description" id="description" placeholder="" onChange={this.handleOnChange } name= "description" defaultValue={vivienda.description} ></input>

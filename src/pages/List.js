@@ -29,15 +29,16 @@ componentDidMount(){
       <div>
         <h1>Lista de viviendas</h1>
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
-            return ( <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+            return ( 
+            <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
        
-
+              <p>Numero de viviendas en cartera: {viviendas.length}</p>
               <Card 
                 
-                title={vivienda.title} 
-                image={vivienda.image} 
-                type={vivienda.type} 
-                price={vivienda.price} 
+                titulo={vivienda.titulo} 
+                imagenes={vivienda.imagenes} 
+                tipo={vivienda.tipo} 
+                precio={vivienda.precio} 
                 metros={vivienda.metros}
                 ciudad={vivienda.ciudad}
                 direccion={vivienda.direccion}
@@ -47,7 +48,7 @@ componentDidMount(){
                 piscina={vivienda.piscina}
                 jardin={vivienda.jardin}
                 referencia={vivienda.referencia} 
-                descripcion={vivienda.description}
+                descripcion={vivienda.descripcion}
 
                 onclick={this.handleClick}
 

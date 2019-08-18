@@ -13,32 +13,26 @@ class ModificarVivienda extends Component {
   }
 
   handelSubmit= (event) => {
-    const {title, type, image, price, numHab, numAseos, referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
+    const {titulo, tipo, imagenes, precio, numHab, numAseos, referencia, descripcion, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
     event.preventDefault();
     viviendaBackendService.updateOneVivienda({
-    title,
-    image,
-    type,
+    titulo,
+    imagenes,
+    tipo,
     ciudad,
     direccion,
     metros,
-    price,
+    precio,
     piscina,
     jardin,
     numHab,
     numAseos,
     numGarajes,
-    piscina,
     referencia,
-    description,
+    descripcion,
     nombrePropietario,
     telefonoPropietario,
     mailPropietario
-
-
-
-
-
 
     })
     .then(()=>{})
@@ -71,11 +65,11 @@ class ModificarVivienda extends Component {
 
   
     render() {
-      const {title, image, type, price, numHab, numAseos, redirect, referencia, description,viviendas} = this.state
+      const {titulo, imagenes, tipo, precio, numHab, numAseos, redirect, referencia, descripcion,viviendas} = this.state
       
       return (
         <div>
-          <h1>Modificar</h1>
+          <h1>Modificar vivienda</h1>
           <p>Numero de viviendas en cartera: {viviendas.length}</p>
           {/* <Link to='/searchreferencia'><button>Buscar por referencia</button></Link> */}
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
@@ -84,6 +78,7 @@ class ModificarVivienda extends Component {
                key={vivienda._id}
                vivienda={vivienda}
                refreshData={this.getFreshData}
+               handelSubmit={this.handelSubmit}
               />
           )
         }) : <p>loading....</p>

@@ -7,13 +7,13 @@ import FileComponent from './FileComponent'
 
 class CrearVivienda extends Component {
   state = {
-    title: 'Paco eres tonto',
-    images: [],
-    clase: 'Alquiler',
-    type: 'piso',
-    ciudad: 'Alicante',
+    titulo: '',
+    imagenes: [],
+    clase: undefined,
+    tipo: undefined,
+    ciudad: undefined,
     direccion: '',
-    price: 0,
+    precio: 0,
     metros: 0,
     numHab: 0,
     NumAseos: 0,
@@ -21,32 +21,34 @@ class CrearVivienda extends Component {
     piscina: 'No',
     jardin:'No',
     referencia: 0,
-    description: '',
+    descripcion: '',
     nombrePropietario: '',
     telefonoPropietario: '',
     mailPropietario: '',
+    viviendas:'',
     redirect: false,
+    
   };
 
   handelSubmit= (event) => {
-    const {title, type, images, price, numHab, numAseos, clase,referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
+    const {titulo, tipo, imagenes, precio, numHab, numAseos, clase,referencia, descripcion, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
     event.preventDefault();
     viviendaBackendService.addOneVivienda({
-    title,
+    titulo,
     clase,
-    images,
-    type,
+    imagenes,
+    tipo,
     ciudad,
     direccion,
     metros,
-    price,
+    precio,
     jardin,
     numHab,
     numAseos,
     numGarajes,
     piscina,
     referencia,
-    description,
+    descripcion,
     nombrePropietario,
     telefonoPropietario,
     mailPropietario
@@ -69,44 +71,50 @@ class CrearVivienda extends Component {
   };
 
   onUploadFinished = filename => {
-    this.setState({images: this.state.images.concat(filename)});
+    this.setState({imagenes: this.state.imagenes.concat(filename)});
   };
 
   render() {
-    const {title, images, clase, type, price, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, description,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario} = this.state
+    const {titulo, imagenes, viviendas, clase, tipo, precio, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario} = this.state
     return (
       <div>
+       
         <form onSubmit ={this.handelSubmit}>
           <label htmlFor="clase">Venta o alquiler</label>
           <select name="clase" onChange={this.handleOnChange } value={clase} id="clase">
+            <option value=''>Elegir</option>
             <option value='venta'>Venta</option>
             <option value='alquiler'>Alquiler</option>
           </select>
-          <label htmlFor="title">Titulo de la vivienda</label>
-          <input type="text" id="title" placeholder="" value={title} name= "title" onChange={this.handleOnChange }></input>
-          
-          <label htmlFor="images">Image</label>
-          <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
-          {/* Pasamos a 'FileComponent' la funcion 'onUploadFinished' para poder actualizar las urls de imagen en la base de datos. */}
-          <FileComponent id="images" onUploadFinished={this.onUploadFinished}/>
-          </label>
-          
-         
-          <label htmlFor="price">Precio</label>
-          <input type="number" id="price" placeholder="" value={price} name= "price" onChange={this.handleOnChange }></input>
-         
-          <label htmlFor="type">Tipo de vivienda</label>
-          <select name='type' onChange={this.handleOnChange } value={type} id="type">
+
+          <label htmlFor="tipo">Tipo de vivienda</label>
+          <select name='tipo' onChange={this.handleOnChange } value={tipo} id="tipo">
+            <option value=''>Elegir</option>
             <option value='piso'>Piso</option>
             <option value='chalet'>Chalet</option>
             <option value='planta baja'>Planta baja</option>
             <option value='bungalow'>Bungalow</option>
             <option value='apartamento'>Apartamento</option>
             <option value='atico'>Atico</option>
-            </select>
+          </select>
+
+          <label htmlFor="titulo">Titulo de la vivienda</label>
+          <input type="text" id="titulo" placeholder="" value={titulo} name= "titulo" onChange={this.handleOnChange }></input>
+          
+          <label htmlFor="imagenes">Image</label>
+          <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
+          {/* Pasamos a 'FileComponent' la funcion 'onUploadFinished' para poder actualizar las urls de imagen en la base de datos. */}
+          <FileComponent id="imagenes" onUploadFinished={this.onUploadFinished}/>
+          </label>
+          
+         
+          <label htmlFor="precio">Precio</label>
+          <input type="number" id="precio" placeholder="" value={precio} name= "precio" onChange={this.handleOnChange }></input>
+         
       
           <label htmlFor="ciudad">Ciudad</label>
           <select name="ciudad" onChange={this.handleOnChange } value={ciudad} id="ciudad">
+            <option value=''>Elegir</option>
             <option value='Alicante'>Alicante</option>
             <option value='San Vicente'>San Vicente</option>
             <option value='San Juan'>San Juan</option>
@@ -136,18 +144,20 @@ class CrearVivienda extends Component {
 
           <label htmlFor="jardin">Jardin</label>
           <select name="jardin" onChange={this.handleOnChange } value={jardin} id="jardin">
+            <option value=''>Elegir</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
 
           <label htmlFor="piscina">Piscina</label>
           <select name="piscina" onChange={this.handleOnChange } value={piscina} id="piscina">
+           <option value=''>Elegir</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
           
-          <label htmlFor="description">Descripcion de la vivienda</label>
-          <input type="text" id="description" placeholder="" onChange={this.handleOnChange } name= "description" value={description} ></input>
+          <label htmlFor="descripcion">Descripcion de la vivienda</label>
+          <input type="text" id="descripcion" placeholder="" onChange={this.handleOnChange } name= "descripcion" value={descripcion} ></input>
          
           <label htmlFor="nombrePropietario">Nombre del propietario</label>
           <input type="text" id="nombrePropietario" placeholder="" onChange={this.handleOnChange } name= "nombrePropietario" value={nombrePropietario} ></input>
