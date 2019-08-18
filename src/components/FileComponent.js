@@ -32,6 +32,9 @@ class FileUploadComponent extends Component {
       .then(url => {
         console.log(url);
         this.setState({ avatarURL: url });
+        // En este punto tenemos la url de la imagen.
+        // Hay que pasarla al componente superior para que actualice el state
+        // antes de hacer el 'push'.
         this.props.onUploadFinished(url);
       });
 

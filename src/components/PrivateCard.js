@@ -4,10 +4,9 @@ export default function PrivateCard(props) {
   return (
     <div>
         <h3>{props.title}</h3>
-          {props.image.map((img) => {
+          {props.images.map((img) => {
                 return (<img key={img} src={img}/>)
           })}
-              <img src={props.image} alt={props.title}></img>
               <p>{props.clase}</p>
               <p>Tipo de vivienda: {props.type}</p>
               <p>Precio: {props.price}</p>

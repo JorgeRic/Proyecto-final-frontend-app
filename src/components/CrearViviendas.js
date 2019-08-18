@@ -8,7 +8,7 @@ import FileComponent from './FileComponent'
 class CrearVivienda extends Component {
   state = {
     title: 'Paco eres tonto',
-    image: [],
+    images: [],
     clase: 'Alquiler',
     type: 'piso',
     ciudad: 'Alicante',
@@ -29,12 +29,12 @@ class CrearVivienda extends Component {
   };
 
   handelSubmit= (event) => {
-    const {title, type, image, price, numHab, numAseos, clase,referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
+    const {title, type, images, price, numHab, numAseos, clase,referencia, description, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
     event.preventDefault();
     viviendaBackendService.addOneVivienda({
     title,
     clase,
-    image,
+    images,
     type,
     ciudad,
     direccion,
@@ -69,11 +69,11 @@ class CrearVivienda extends Component {
   };
 
   onUploadFinished = filename => {
-    this.setState({image: this.state.image.concat(filename)});
+    this.setState({images: this.state.images.concat(filename)});
   };
 
   render() {
-    const {title, image, clase, type, price, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, description,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario} = this.state
+    const {title, images, clase, type, price, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, description,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario} = this.state
     return (
       <div>
         <form onSubmit ={this.handelSubmit}>
@@ -85,9 +85,10 @@ class CrearVivienda extends Component {
           <label htmlFor="title">Titulo de la vivienda</label>
           <input type="text" id="title" placeholder="" value={title} name= "title" onChange={this.handleOnChange }></input>
           
-          <label htmlFor="image">Image</label>
+          <label htmlFor="images">Image</label>
           <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
-          <FileComponent id="image" onUploadFinished={this.onUploadFinished}/>
+          {/* Pasamos a 'FileComponent' la funcion 'onUploadFinished' para poder actualizar las urls de imagen en la base de datos. */}
+          <FileComponent id="images" onUploadFinished={this.onUploadFinished}/>
           </label>
           
          
