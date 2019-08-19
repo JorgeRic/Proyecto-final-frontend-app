@@ -33,6 +33,11 @@ class VivievdaBackendService  {
     .then(response => response)
   }
 
+  searchReferencia(vivienda){
+    return this.vivievdaBackendService.post(`/based/viviendas/search`, vivienda)
+    .then(response => response)
+  }
+
   getOneVivienda(id){
     console.log(id)
     return this.vivievdaBackendService.get(`based/viviendas/${id}/detail`)

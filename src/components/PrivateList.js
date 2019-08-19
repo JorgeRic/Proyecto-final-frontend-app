@@ -28,9 +28,10 @@ class PrivateList extends Component {
       return (
         <div>
           <h1>Lista de viviendas</h1>
-          <Link to='/searchreferencia'><button>Buscar por referencia</button></Link>
+          <Link to='/searchreferencia'><button>Buscar por numero de referencia</button></Link>
             {viviendas.length > 0 ? viviendas.map((vivienda)=>{
-              return ( <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+            return ( 
+            <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
                 
               <p>Numero de viviendas en cartera: {viviendas.length}</p>
               <PrivateCard   

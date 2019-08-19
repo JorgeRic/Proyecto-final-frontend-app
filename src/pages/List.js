@@ -34,7 +34,7 @@ componentDidMount(){
        
               <p>Numero de viviendas en cartera: {viviendas.length}</p>
               <Card 
-                
+                clase={vivienda.clase} 
                 titulo={vivienda.titulo} 
                 imagenes={vivienda.imagenes} 
                 tipo={vivienda.tipo} 
@@ -55,7 +55,7 @@ componentDidMount(){
                 />
             </Link>
             )
-          }) : <p>loading....</p>
+          }) : <p></p>
           }
         
       </div>

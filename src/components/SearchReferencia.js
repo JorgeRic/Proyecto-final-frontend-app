@@ -3,30 +3,33 @@ import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
 import { Link } from 'react-router-dom'
-import PrivateCard from '../components/PrivateCard'
+import PrivateCard from './PrivateCard'
 
 
 
 
-class SearchVivienda extends Component {
-  state = {
-    titulo: undefined,
-    tipo: undefined,
-    imagenes: undefined,
-    precio: undefined,
-    numHab: undefined,
-    NumAseos: undefined,
-    referencia: undefined,
-    clase: undefined,
-    descripcion: undefined,
-    metros: undefined,
-    viviendas: []
-  };
+class SearchReferencia extends Component {
+ 
+    state = {
+      titulo: '',
+      tipo: null,
+      imagenes: null,
+      precio: null,
+      numHab: null,
+      NumAseos: null,
+      referencia: null,
+      clase: null,
+      descripcion: null,
+      metros: null,
+      jardin: null,
+      ciudad: null,
+      viviendas: []
+    };
 
   handleFormSubmit= (event) => {
     const {titulo, tipo, imagenes, precio, clase, numHab, numAseos, referencia, descripcion} = this.state
     event.preventDefault();
-    viviendaBackendService.searchVivienda({
+    viviendaBackendService.searchReferencia({
       titulo,
       imagenes,
       clase,
@@ -52,14 +55,18 @@ class SearchVivienda extends Component {
   };
 
  render() {
-   const{referencia,clase, precio, metros, numHab, numAseos, viviendas} = this.state
+   const{referencia,viviendas} = this.state
    console.log(this.state.viviendas.data)
    
    return (
      <div>
        <h1>Buscar por referencia:</h1>
+       
        {viviendas.data ? viviendas.data.map((vivienda)=>{
-            return ( <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+            return (
+              
+              
+              <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
 
             <PrivateCard   
               clase={vivienda.clase}
@@ -85,20 +92,11 @@ class SearchVivienda extends Component {
           </Link>
           
           )
-        }) : <p>loading....</p>
+        }) : <p></p>
         }
         <form onSubmit={this.handleFormSubmit}>
           <label htmlFor='referencia'>Referencia:</label>
           <input id='referencia' type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
-
-          <label htmlFor='clase'>Clase:</label>
-          <input id='clase' type='text' name='clase' value={clase} onChange={this.handleChange}/>
-
-          <label htmlFor='precio'>Price:</label>
-          <input id='precio' type='number' name='precio' value={precio} onChange={this.handleChange}/>
-
-          <label htmlFor='metros'>Meters:</label>
-          <input id='metros' type='number' name='metros' value={metros} onChange={this.handleChange}/>
 
           <button type ="submit">Search</button>
          
@@ -110,4 +108,8 @@ class SearchVivienda extends Component {
 
 
 
-export default withAuth(SearchVivienda);
+export default withAuth(SearchReferencia);
+
+
+
+

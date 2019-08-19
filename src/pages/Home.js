@@ -9,6 +9,7 @@ export default class Home extends Component {
         <h1>Home Page</h1>
         <Link to='/list'>Lista de viviendas</Link>
         <h3>Buscar por:</h3>
+        <Link to='/search'><button>Buscar vivienda</button></Link>
      
         
     

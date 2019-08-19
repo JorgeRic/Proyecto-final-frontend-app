@@ -10,6 +10,7 @@ import AuthProvider from './context/AuthContext.js'
 import PrivateRoute from './components/PrivateRoute'
 import PrivateList from './components/PrivateList'
 import AnonRoute from './components/AnonRoute'
+import Search from './components/Search'
 import SearchReferencia from './components/SearchReferencia'
 import FileComponent from './components/FileComponent'
 
@@ -53,11 +54,12 @@ class App extends Component {
             <PrivateRoute  path="/crearvivienda" component={CrearViviendas} />
             <PrivateRoute  path="/eliminarvivienda" component={EliminarVivienda} />
             <PrivateRoute  path="/modificarvivienda" component={ModificarVivienda} />
+            <Route path="/searchreferencia" component={SearchReferencia} />
             <Route path = "/list"  component={List} />
             <Route path = "/detail/:id"  component={Detail} />
             <Route path = "/recibirinformacion" component={RecibirInformacion} />
             
-            <Route path="/searchreferencia" component={SearchReferencia} />
+            <Route path="/search" component={Search} />
             
             <Route component={NotFound} />
           </Switch>

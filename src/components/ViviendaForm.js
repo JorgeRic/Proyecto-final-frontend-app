@@ -54,12 +54,12 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="type">Tipo de vivienda</label>
                 <select name='tipo' onChange={this.handleUpdate } defaultValue={vivienda.tipo} id="tipo">
                   <option value=''>modificar datos ...</option>
-                  <option value='Piso'>Piso</option>
-                  <option value='Chalet'>Chalet</option>
-                  <option value='Planta baja'>Planta baja</option>
-                  <option value='Bungalow'>Bungalow</option>
-                  <option value='Apartamento'>Apartamento</option>
-                  <option value='Atico'>Atico</option>
+                  <option value='piso'>Piso</option>
+                  <option value='chalet'>Chalet</option>
+                  <option value='planta baja'>Planta baja</option>
+                  <option value='bungalow'>Bungalow</option>
+                  <option value='apartamento'>Apartamento</option>
+                  <option value='atico'>Atico</option>
                 </select>
 
                 <label htmlFor="ciudad">Ciudad</label>

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
 import {Redirect} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class EliminarVivienda extends Component {
   state = {
@@ -43,6 +44,7 @@ class EliminarVivienda extends Component {
      
         <div>
           <h1>Eliminar vivienda</h1>
+          <Link to='/searchreferencia'><button>Buscar por numero de referencia</button></Link>
           {viviendas.length > 0 ? viviendas.map((vivienda) => {
             return (
               <article key = {vivienda._id}>
