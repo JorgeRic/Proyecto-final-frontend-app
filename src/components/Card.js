@@ -3,7 +3,7 @@ import React from 'react'
 export default function Card(props) {
   console.log(props.imagenes)
   return (
-    <div>
+    <div className="card">
         <h3>{props.titulo}</h3>
             
               {props.imagenes ? props.imagenes.map((img) => {

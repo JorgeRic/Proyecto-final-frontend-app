@@ -99,6 +99,14 @@ class SearchVivienda extends Component {
             <option value='El Altet'>El Altet</option>
             <option value='Agost'>Agost</option>
           </select>
+{/* 
+          <label htmlFor="precio">Precio</label>
+          <select name="precio" onChange={this.handleChange } value={precio} id="precio">
+            <option value=''>Elegir</option>
+            <option value='<100000'>100000</option>
+            <option value='<200000'>200000</option>
+          </select> */}
+
 
           <label htmlFor="numHab">Numero de habitaciones</label>
           <select name="numHab" onChange={this.handleChange } value={numHab} id="numHab">
@@ -109,7 +117,7 @@ class SearchVivienda extends Component {
             <option value='4'>4</option>
           </select>
 
-          <label htmlFor="numAseos">Numero de habitaciones</label>
+          <label htmlFor="numAseos">Numero de aseos</label>
           <select name="numAseos" onChange={this.handleChange } value={numAseos} id="numAseos">
             <option value=''>Elegir</option>
             <option value='1'>1</option>
@@ -137,6 +145,7 @@ class SearchVivienda extends Component {
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
+
 
           <button type ="submit">Search</button>
     

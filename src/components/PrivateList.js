@@ -28,12 +28,14 @@ class PrivateList extends Component {
       return (
         <div>
           <h1>Lista de viviendas</h1>
+          <p>Numero de viviendas en cartera: {viviendas.length}</p>
           <Link to='/searchreferencia'><button>Buscar por numero de referencia</button></Link>
             {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
-            <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+              <div>
+              <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
                 
-              <p>Numero de viviendas en cartera: {viviendas.length}</p>
+              </Link>
               <PrivateCard   
                 titulo={vivienda.titulo} 
                 clase={vivienda.clase}
@@ -56,10 +58,9 @@ class PrivateList extends Component {
                 onclick={this.handleClick}
                 />
 
-            </Link>
-            
+            </div>
             )
-          }) : <p>loading....</p>
+          })  : <p></p>
           }
            
           

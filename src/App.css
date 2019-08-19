@@ -12,7 +12,9 @@
   height: 20%;
   width: 20%;
 }
-
+p{
+  color: black
+}
 
 .App-header {
   background-color: #282c34;
@@ -39,5 +41,12 @@
 }
 .button-private{
   color: black
+}
+img{
+  width: 70%;
+  height: 40%;
+}
+.card {
+  border:  black 5px solid
 }
 

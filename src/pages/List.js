@@ -28,32 +28,36 @@ componentDidMount(){
     return (
       <div>
         <h1>Lista de viviendas</h1>
+        <p>Numero de viviendas en cartera: {viviendas.length}</p>
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
-            <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
-       
-              <p>Numero de viviendas en cartera: {viviendas.length}</p>
-              <Card 
-                clase={vivienda.clase} 
-                titulo={vivienda.titulo} 
-                imagenes={vivienda.imagenes} 
-                tipo={vivienda.tipo} 
-                precio={vivienda.precio} 
-                metros={vivienda.metros}
-                ciudad={vivienda.ciudad}
-                direccion={vivienda.direccion}
-                numHab={vivienda.numHab} 
-                numAseos={vivienda.numAseos} 
-                numGarajes={vivienda.numGarajes}
-                piscina={vivienda.piscina}
-                jardin={vivienda.jardin}
-                referencia={vivienda.referencia} 
-                descripcion={vivienda.descripcion}
+              <div>
+              <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+                Ver vivienda en detalle:
+                <image src='' alt=''/>
+              </Link>
+                <Card 
+                  clase={vivienda.clase} 
+                  titulo={vivienda.titulo} 
+                  imagenes={vivienda.imagenes} 
+                  tipo={vivienda.tipo} 
+                  precio={vivienda.precio} 
+                  metros={vivienda.metros}
+                  ciudad={vivienda.ciudad}
+                  direccion={vivienda.direccion}
+                  numHab={vivienda.numHab} 
+                  numAseos={vivienda.numAseos} 
+                  numGarajes={vivienda.numGarajes}
+                  piscina={vivienda.piscina}
+                  jardin={vivienda.jardin}
+                  referencia={vivienda.referencia} 
+                  descripcion={vivienda.descripcion}
 
-                onclick={this.handleClick}
+                  onclick={this.handleClick}
 
-                />
-            </Link>
+                  />
+             
+              </div>
             )
           }) : <p></p>
           }
