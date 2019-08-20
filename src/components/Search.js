@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
-import { Link } from 'react-router-dom'
+import { NavLink  } from 'react-router-dom'
 import Card from './Card'
 
 
@@ -11,18 +11,18 @@ import Card from './Card'
 class SearchVivienda extends Component {
   state = {
     titulo: '',
-    tipo: null,
+    tipo: "",
     imagenes: null,
-    precio: null,
-    numHab: null,
-    numAseos: null,
+    precio: 0,
+    numHab: "",
+    numAseos: "",
     referencia: null,
-    clase: null,
-    descripcion: null,
-    metros: null,
-    jardin: null,
-    numGarajes: null,
-    ciudad: null,
+    clase: "",
+    descripcion: "",
+    metros: "",
+    jardin: "",
+    numGarajes: "",
+    ciudad: "",
     viviendas: []
   };
 
@@ -66,7 +66,7 @@ class SearchVivienda extends Component {
    
    return (
      <div>
-       <h1>Buscar vivienda:</h1>
+       <h1></h1>
 
         <form onSubmit={this.handleFormSubmit}>
           
@@ -99,13 +99,13 @@ class SearchVivienda extends Component {
             <option value='El Altet'>El Altet</option>
             <option value='Agost'>Agost</option>
           </select>
-{/* 
+ 
           <label htmlFor="precio">Precio</label>
           <select name="precio" onChange={this.handleChange } value={precio} id="precio">
             <option value=''>Elegir</option>
-            <option value='<100000'>100000</option>
-            <option value='<200000'>200000</option>
-          </select> */}
+            <option value='100000'>hasta 100000</option>
+            <option value='200000'>hasta 200000</option>
+          </select>
 
 
           <label htmlFor="numHab">Numero de habitaciones</label>
@@ -153,7 +153,7 @@ class SearchVivienda extends Component {
       </form>
 
 {viviendas.data ? viviendas.data.map((vivienda)=>{
-  return ( <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+  return ( <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
 
   <Card   
     clase={vivienda.clase}
@@ -175,10 +175,10 @@ class SearchVivienda extends Component {
     onclick={this.handleClick}
     />
 
-</Link>
+</NavLink>
 
 )
-}) : <p>loading....</p>
+}) : <p></p>
 }
 
      </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import withAuth from '../components/withAuth.js'
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import NavBar from '../components/NavBar.js';
 
 class Private extends Component {
@@ -11,12 +11,12 @@ class Private extends Component {
       <div>
        
         <h1>Private Page</h1>
-        <Link to='/signup'><button>Crear nuevo usuario</button></Link>
-        <Link to='/privatelist'><button>Lista de viviendas</button></Link>
-        <Link to='/crearvivienda'><button>Crear nueva vivienda</button></Link>
-        <Link to='/searchreferencia'><button>Buscar por referencia</button></Link>
-        <Link to='/modificarvivienda'><button>Modificar vivienda</button></Link>
-        <Link to='/eliminarvivienda'><button>Eliminar vivienda</button></Link>
+        <NavLink to='/signup' activeClassName=""><button>Crear nuevo usuario</button></NavLink>
+        <NavLink to='/privatelist' activeClassName=""><button>Lista de viviendas</button></NavLink>
+        <NavLink to='/crearvivienda' activeClassName="" ><button>Crear nueva vivienda</button></NavLink>
+        <NavLink to='/searchreferencia' activeClassName="" ><button>Buscar por referencia</button></NavLink>
+        <NavLink to='/modificarvivienda' activeClassName=""><button>Modificar vivienda</button></NavLink>
+        <NavLink to='/eliminarvivienda' activeClassName=""><button>Eliminar vivienda</button></NavLink>
       
       
         

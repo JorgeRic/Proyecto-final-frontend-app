@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
-import { Link } from 'react-router-dom'
+import { NavLink  } from 'react-router-dom'
 import PrivateCard from './PrivateCard'
 
 
@@ -66,7 +66,7 @@ class SearchReferencia extends Component {
             return (
               
               
-              <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+              <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
 
             <PrivateCard   
               clase={vivienda.clase}
@@ -89,7 +89,7 @@ class SearchReferencia extends Component {
               onclick={this.handleClick}
               />
 
-          </Link>
+          </NavLink >
           
           )
         }) : <p></p>

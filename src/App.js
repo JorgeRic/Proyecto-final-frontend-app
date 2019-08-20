@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import './App.css';
+import 'milligram';
+import firebase from 'firebase'
 
 import Navbar from './components/NavBar.js';
 import Footer from './components/Footer'
@@ -12,7 +15,7 @@ import PrivateList from './components/PrivateList'
 import AnonRoute from './components/AnonRoute'
 import Search from './components/Search'
 import SearchReferencia from './components/SearchReferencia'
-import FileComponent from './components/FileComponent'
+
 
 import CrearViviendas from './components/CrearViviendas';
 import EliminarVivienda from './components/EliminarVivienda'
@@ -23,10 +26,7 @@ import NotFound from './pages/NotFound'
 import List from './pages/List'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
-import './App.css';
-import 'milligram';
 
-import firebase from 'firebase'
 const config = {
 apiKey: "AIzaSyDeRbk1dsAHiQyr1T1FRhk1d317hzWaAKc",
 authDomain:"inmob-frontend.firebaseapp.com",

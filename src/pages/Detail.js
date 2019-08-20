@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import viviendaBackendService from '../services/viv-backend-service'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import withAuth from '../components/withAuth.js'
 import Card from '../components/Card'
 
@@ -57,7 +57,7 @@ render() {
                 descripcion={vivienda.descripcion}
                 />
                <p>Estoy interesado en recibir más información de esta vivienda: </p>
-               <Link to='/recibirinformacion'>Recibir informacion</Link>
+               <NavLink to='/recibirinformacion' activeClassName="">Recibir informacion</NavLink>
         <button onClick={this.goToPreviousPage}>Volver a la lista</button>
         {/* { vivienda ? <img src = {image} alt={title} className='image-details'/>: <p>Loading....</p>} */}
         

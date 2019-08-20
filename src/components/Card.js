@@ -1,30 +1,34 @@
 import React from 'react'
 
-export default function Card(props) {
-  console.log(props.imagenes)
+function Card(props) {
+  const { mostrarUnaPhoto, imagenes, titulo, clase, tipo, precio, ciudad, direccion, metros, numHab, numAseos, numGarajes, piscina, jardin, referencia, descripcion} = props;
   return (
     <div className="card">
-        <h3>{props.titulo}</h3>
-            
-              {props.imagenes ? props.imagenes.map((img) => {
-                return (<img key={img} src={img}/>)
-               }) : null}
-              <p>Vivienda en {props.clase}</p>
-              <p>Tipo de vivienda: {props.tipo}</p>
-              <p>Precio: {props.precio} euros</p>
-              <p>Ciudad: {props.ciudad}</p>
-              <p>Direccion de la vivienda: {props.direccion}</p>
-              <p>metros cuadrados: {props.metros}</p>
-              <p>Numero de habitaciones: {props.numHab}</p>
-              <p>Numero de baños: {props.numAseos}</p>
-              <p>Numero de garajes:{props.numGarajes}</p>
-              <p>Piscina: {props.piscina}</p>
-              <p>Jardin: {props.jardin}</p>
-              <p>Numero de referencia: {props.referencia}</p>
-              <p>Descripcion de viviendas: {props.descripcion}</p>
+      <h3>{titulo}</h3>
+      <p>Vivienda en {clase}</p>
+      {
+        mostrarUnaPhoto 
+          ? (<img src={imagenes[0]}/>)
+          : imagenes
+            ? imagenes.map((img) =>  (<img key={img} src={img}/>))
+            : null
+      }
+
+      <p>Tipo de vivienda: {tipo}</p>
+      <p>Precio: {precio} euros</p>
+      <p>Ciudad: {ciudad}</p>
+      <p>Direccion de la vivienda: {direccion}</p>
+      <p>metros cuadrados: {metros}</p>
+      <p>Numero de habitaciones: {numHab}</p>
+      <p>Numero de baños: {numAseos}</p>
+      <p>Numero de garajes:{numGarajes}</p>
+      <p>Piscina: {piscina}</p>
+      <p>Jardin: {jardin}</p>
+      <p>Numero de referencia: {referencia}</p>
+      <p>Descripcion de viviendas: {descripcion}</p>
     
 
     </div>
   )
 }
-
+export default Card

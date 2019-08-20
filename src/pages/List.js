@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import viviendaBackendService from '../services/viv-backend-service'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Card from '../components/Card'
 
 class List extends Component {
@@ -32,11 +32,12 @@ componentDidMount(){
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
               <div>
-              <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
+              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="">
                 Ver vivienda en detalle:
                 <image src='' alt=''/>
-              </Link>
-                <Card 
+              </NavLink>
+                <Card
+                  mostrarUnaPhoto={true}
                   clase={vivienda.clase} 
                   titulo={vivienda.titulo} 
                   imagenes={vivienda.imagenes} 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
 import PrivateCard from '../components/PrivateCard'
@@ -29,17 +29,19 @@ class PrivateList extends Component {
         <div>
           <h1>Lista de viviendas</h1>
           <p>Numero de viviendas en cartera: {viviendas.length}</p>
-          <Link to='/searchreferencia'><button>Buscar por numero de referencia</button></Link>
+          <NavLink to='/searchreferencia' activeClassName=""><button>Buscar por numero de referencia</button></NavLink>
             {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
               <div>
-              <Link key={vivienda._id} to={`/detail/${vivienda._id}`}>
-                
-              </Link>
+              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="">
+                Ver vivienda en detalle:
+                <image src='' alt=''/>
+              </NavLink>
               <PrivateCard   
+                mostrarUnaPhoto={true}
                 titulo={vivienda.titulo} 
+                imagenes={vivienda.imagenes} 
                 clase={vivienda.clase}
-                imagenes={vivienda.imagenes}
                 tipo={vivienda.tipo} 
                 ciudad={vivienda.ciudad}
                 direccion={vivienda.direccion}
