@@ -8,18 +8,15 @@ class Private extends Component {
   render() {
     
     return (
-      <div>
+      <div className="main-private">
        
-        <h1>Private Page</h1>
-        <NavLink to='/signup' activeClassName=""><button>Crear nuevo usuario</button></NavLink>
-        <NavLink to='/privatelist' activeClassName=""><button>Lista de viviendas</button></NavLink>
-        <NavLink to='/crearvivienda' activeClassName="" ><button>Crear nueva vivienda</button></NavLink>
-        <NavLink to='/searchreferencia' activeClassName="" ><button>Buscar por referencia</button></NavLink>
-        <NavLink to='/modificarvivienda' activeClassName=""><button>Modificar vivienda</button></NavLink>
-        <NavLink to='/eliminarvivienda' activeClassName=""><button>Eliminar vivienda</button></NavLink>
+        <NavLink to='/signup' activeClassName=""><button className="btn-private" ><h3>Crear nuevo usuario</h3></button></NavLink>
+        <NavLink to='/privatelist' activeClassName=""><button className="btn-private" ><h3>Lista de viviendas</h3></button></NavLink>
+        <NavLink to='/crearvivienda' activeClassName="" ><button className="btn-private" ><h3>Crear nueva vivienda</h3></button></NavLink>
+        <NavLink to='/searchreferencia' activeClassName="" ><button className="btn-private" ><h3>Buscar por referencia</h3></button></NavLink>
+        <NavLink to='/modificarvivienda' activeClassName=""><button className="btn-private" ><h3>Modificar vivienda</h3></button></NavLink>
+        <NavLink to='/eliminarvivienda' activeClassName=""><button className="btn-private" ><h3>Eliminar vivienda</h3></button></NavLink>
       
-      
-        
       
       </div>
     )

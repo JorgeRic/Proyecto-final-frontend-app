@@ -7,16 +7,17 @@ function Card(props) {
     <div className="card">
       <h3>{titulo}</h3>
       <p>Vivienda en {clase}</p>
+      <div className="container-foto">
       {
         mostrarUnaPhoto 
-          ? (<img src={imagenes[0]}/>)
+          ? (<img className="foto" src={imagenes[0]}/>)
           : imagenes
             ? imagenes.map((img) =>  (<img key={img} src={img}/>))
             : null
       }
-
+        </div>
       <p>Tipo de vivienda: {tipo}</p>
-      <p>Precio: {precio} euros</p>
+      <h3>Precio: {precio} euros</h3>
       <p>Ciudad: {ciudad}</p>
       <p>Direccion de la vivienda: {direccion}</p>
       <p>metros cuadrados: {metros}</p>

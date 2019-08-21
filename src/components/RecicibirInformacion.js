@@ -17,24 +17,24 @@ class RecibirInformacion extends Component {
   render(){
     return (
     
-    <>
-    <p>Si esta interesado en recibir más información sobre esta vivienda, pongase en con nosotros:</p>
-          <label htmlFor="titulo">Nombre:</label>
-          <input type="text" id="nombre" placeholder="nombre" name= "nombre" ></input>
-          <label htmlFor="numTelf">Numerode telefono:</label>
-          <input type="number" id="titulo" placeholder="numero de contacto" name= "titulo" ></input>
-          <label htmlFor="titulo">Mail</label>
-          <input type="text" id="titulo" placeholder="email personal" name= "titulo" ></input>
-          <label htmlFor="titulo">¿En que podemos ayudarle?</label>
-          <input type="text" id="nombre" placeholder="Me gustaría hacer una visita a esta vivienda......." name= "nombre" ></input>
-          { this.state.enviado ? <h3>Mail enviado. En breve nos pondremos en contacto con usted</h3> : <button onClick={this.manageSubmit}>Enviar</button> }<br></br>
+    <div className="recibir-inform">
+    <p>Si esta interesado en recibir más información sobre esta vivienda, pongase en contacto con nosotros:</p>
+          <label htmlFor="titulo" className="datos-login"><h2>Nombre:</h2></label>
+          <input type="text" className="cuadro-informacion" id="nombre" placeholder="nombre" name= "nombre" ></input>
+          <label htmlFor="numTelf" className="datos-login"><h2>Numero de telefono:</h2></label>
+          <input type="number" className="cuadro-informacion" id="titulo" placeholder="numero de contacto" name= "titulo" ></input>
+          <label htmlFor="titulo" className="datos-login" ><h2>Mail</h2></label>
+          <input type="text" className="cuadro-informacion" id="titulo" placeholder="email personal" name= "titulo" ></input>
+          <label htmlFor="titulo" className="datos-login"><h3>¿En que podemos ayudarle?</h3></label>
+          <input type="text" className="cuadro-informacion" id="nombre" placeholder="Me gustaría hacer una visita a esta vivienda......." name= "nombre" ></input>
+          { this.state.enviado ? <h4>Mail enviado. En breve nos pondremos en contacto con usted. Gracias</h4> : <button className="btn-select-search" onClick={this.manageSubmit}><h2>Enviar</h2></button> }<br></br>
           
           {/* <input type="submit" value="SUBMIT EMAIL TO: info@whatshouldisay.ca" <a href="mailto:info@whatshouldisay.ca" /> */}
           {/* <input type="submit" value="Send Email" />  */}
 
-        
-          <NavLink to='/list' activeClassName=""><button>Volver a lista de viviendas</button></NavLink>
-    </>
+          
+          <NavLink to='/list' activeClassName=""><button className="btn-recibir-inform"><h3>Volver a lista de viviendas</h3></button></NavLink>
+    </div>
      
     
   )}

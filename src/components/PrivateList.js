@@ -24,15 +24,14 @@ class PrivateList extends Component {
       console.log(viviendas )
       return (
         <div>
-          <h1>Lista de viviendas</h1>
-          <p>Numero de viviendas en cartera: {viviendas.length}</p>
-          <NavLink to='/searchreferencia' activeClassName=""><button>Buscar por numero de referencia</button></NavLink>
+          <h1>LISTA DE VIVIENDAS</h1>
+          <h2 className="cartera-viv">Numero de viviendas en cartera: {viviendas.length}</h2>
+          <NavLink to='/searchreferencia' activeClassName=""><button className="btn-select-detail"><h3>Buscar por numero de referencia</h3></button></NavLink>
             {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
               <div>
-              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="">
-                Ver vivienda en detalle:
-                <image src='' alt=''/>
+              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
+              <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3><img src="https://images.emojiterra.com/google/android-pie/512px/1f447.png" width="40px" heigth="40px"></img></button>
               </NavLink>
               <PrivateCard   
                 mostrarUnaPhoto={true}

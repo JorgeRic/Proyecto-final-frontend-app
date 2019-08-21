@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-import 'milligram';
+// import 'milligram';
 import firebase from 'firebase'
 
 import Navbar from './components/NavBar.js';
@@ -45,6 +45,7 @@ class App extends Component {
         
           
           <Navbar />
+          <section className="main-wrapper">
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route  path="/signup" component={Signup} />
@@ -63,6 +64,7 @@ class App extends Component {
             
             <Route component={NotFound} />
           </Switch>
+          </section>
           <Footer />
         </div>
         </AuthProvider>

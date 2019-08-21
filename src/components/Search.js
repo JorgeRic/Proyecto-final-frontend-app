@@ -66,21 +66,17 @@ class SearchVivienda extends Component {
    
    return (
      <div>
-       <h1></h1>
 
         <form onSubmit={this.handleFormSubmit}>
           
-
-          <label htmlFor="clase">Venta o alquiler</label>
-          <select name="clase" onChange={this.handleChange } value={clase} id="clase">
-            <option value=''>Elegir</option>
-            <option value='venta'>Venta</option>
+          <select name="clase" className="select-search" onChange={this.handleChange } value={clase} id="clase">
+            <option value=''>Venta o alquiler</option>
+            <option value='ventaVenta o alquiler'>Venta</option>
             <option value='alquiler'>Alquiler</option>
           </select>
 
-          <label htmlFor="tipo">Tipo de vivienda</label>
-          <select name='tipo' onChange={this.handleChange } value={tipo} id="tipo">
-            <option value=''>Elegir</option>
+          <select name='tipo'  className="select-search" onChange={this.handleChange } value={tipo} id="tipo">
+            <option value=''>Tipo de vivienda</option>
             <option value='piso'>Piso</option>
             <option value='chalet'>Chalet</option>
             <option value='planta baja'>Planta baja</option>
@@ -89,9 +85,8 @@ class SearchVivienda extends Component {
             <option value='atico'>Atico</option>
           </select>
 
-          <label htmlFor="ciudad">Ciudad</label>
-          <select name="ciudad" onChange={this.handleChange } value={ciudad} id="ciudad">
-            <option value=''>Elegir</option>
+          <select name="ciudad" className="select-search" onChange={this.handleChange } value={ciudad} id="ciudad">
+            <option value=''>Ciudad</option>
             <option value='Alicante'>Alicante</option>
             <option value='San Vicente'>San Vicente</option>
             <option value='San Juan'>San Juan</option>
@@ -100,55 +95,55 @@ class SearchVivienda extends Component {
             <option value='Agost'>Agost</option>
           </select>
  
-          <label htmlFor="precio">Precio</label>
-          <select name="precio" onChange={this.handleChange } value={precio} id="precio">
-            <option value=''>Elegir</option>
+          <select name="precio" className="select-search" onChange={this.handleChange } value={precio} id="precio">
+            <option value=''>Precio</option>
             <option value='100000'>hasta 100000</option>
             <option value='200000'>hasta 200000</option>
+            <option value='100000'>hasta 300000</option>
+            <option value='200000'>hasta 400000</option>
+            <option value='100000'>hasta 500000</option>
+            <option value='200000'>hasta 600000</option>
           </select>
 
 
-          <label htmlFor="numHab">Numero de habitaciones</label>
-          <select name="numHab" onChange={this.handleChange } value={numHab} id="numHab">
-            <option value=''>Elegir</option>
+          <select name="numHab" className="select-search" onChange={this.handleChange } value={numHab} id="numHab">
+            <option value=''>Numero habitaciones</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
             <option value='4'>4</option>
           </select>
 
-          <label htmlFor="numAseos">Numero de aseos</label>
-          <select name="numAseos" onChange={this.handleChange } value={numAseos} id="numAseos">
-            <option value=''>Elegir</option>
+
+          <select name="numAseos" className="select-search" onChange={this.handleChange } value={numAseos} id="numAseos">
+            <option value=''>Numero de baños</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
           </select>
 
-          <label htmlFor="numGarajes">Numero de habitaciones</label>
-          <select name="numGarajes" onChange={this.handleChange } value={numGarajes} id="numGarajes">
-            <option value=''>Elegir</option>
+          <select name="numGarajes" className="select-search" onChange={this.handleChange } value={numGarajes} id="numGarajes">
+            <option value=''>Numero garajes</option>
+            <option value='0'>1</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
           </select>
+       
 
-          <label htmlFor="jardin">Jardin</label>
-          <select name="jardin" onChange={this.handleChange } value={jardin} id="jardin">
-            <option value=''>Elegir</option>
+          <select name="jardin" className="select-search" onChange={this.handleChange } value={jardin} id="jardin">
+            <option value=''>Jardín?</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
 
-          <label htmlFor="piscina">Piscina</label>
-          <select name="piscina" onChange={this.handleChange } value={piscina} id="piscina">
-           <option value=''>Elegir</option>
+          <select name="piscina" className="select-search" onChange={this.handleChange } value={piscina} id="piscina">
+           <option value=''>Piscina?</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
 
-
-          <button type ="submit">Search</button>
-    
+          <button className="btn-select-search" type="submit" ><h2>Search</h2></button>
+       
          
       </form>
 
