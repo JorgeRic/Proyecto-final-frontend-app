@@ -27,16 +27,16 @@ componentDidMount(){
     console.log(viviendas)
     return (
       <div>
-        <h1>Lista de viviendas</h1>
-        <p>Numero de viviendas en cartera: {viviendas.length}</p>
+        <h1>LISTA DE VIVIENDAS</h1>
+        <h2 className="cartera-viv">Numero de viviendas en cartera: {viviendas.length}</h2>
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
               <div>
-              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="">
-                Ver vivienda en detalle:
-                <image src='' alt=''/>
+              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
+              <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3><img src="https://images.emojiterra.com/google/android-pie/512px/1f447.png" width="40px" heigth="40px"></img></button>
+            
               </NavLink>
-                <Card
+                <Card 
                   mostrarUnaPhoto={true}
                   clase={vivienda.clase} 
                   titulo={vivienda.titulo} 

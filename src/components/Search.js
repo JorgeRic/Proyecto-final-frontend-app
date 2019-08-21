@@ -69,8 +69,6 @@ class SearchVivienda extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           
-
-       
           <select name="clase" className="select-search" onChange={this.handleChange } value={clase} id="clase">
             <option value=''>Venta o alquiler</option>
             <option value='ventaVenta o alquiler'>Venta</option>
@@ -130,6 +128,7 @@ class SearchVivienda extends Component {
             <option value='1'>1</option>
             <option value='2'>2</option>
           </select>
+       
 
           <select name="jardin" className="select-search" onChange={this.handleChange } value={jardin} id="jardin">
             <option value=''>Jardín?</option>
@@ -143,10 +142,8 @@ class SearchVivienda extends Component {
             <option value='No'>No</option>
           </select>
 
-
           <button className="btn-select-search" type="submit" ><h2>Search</h2></button>
        
-          
          
       </form>
 

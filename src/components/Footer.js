@@ -1,13 +1,14 @@
 import React from 'react'
+import Map from '../components/MapBox'
 
 function Footer() {
   return (
     <div className="footer">
   
       <img className="logo" src ="cityzennegro.jpg" alt="logo" />
+{/*      
+     <Map></Map> */}
      
-     
-      {/* <img><canvas class="ol-unselectable" style="width: 100%; height: 100%;" width="384" height="200"></canvas></img> */}
     </div>
   )
 }

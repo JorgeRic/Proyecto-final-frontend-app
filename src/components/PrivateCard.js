@@ -5,16 +5,18 @@ export default function PrivateCard(props) {
   return (
     <div className="card">
         <h3>{titulo}</h3>
+        <div className="container-foto">
         {
         mostrarUnaPhoto 
-          ? (<img src={imagenes[0]}/>)
+          ? (<img className="foto" src={imagenes[0]}/>)
           : imagenes
             ? imagenes.map((img) =>  (<img key={img} src={img}/>))
             : null
          }
-              <p>{clase}</p>
+        </div>
+              <p>Vivienda en {clase}</p>
               <p>Tipo de vivienda: {tipo}</p>
-              <p>Precio: {precio} euros</p>
+              <h3>Precio: {precio} euros</h3>
               <p>Ciudad: {ciudad}</p>
               <p>Direccion de la vivienda: {direccion}</p>
               <p>metros cuadrados: {metros}</p>
@@ -23,7 +25,7 @@ export default function PrivateCard(props) {
               <p>Numero de garajes:{numGarajes}</p>
               <p>Piscina: {piscina}</p>
               <p>Jardin: {jardin}</p>
-              <p>Numero de referencia: {referencia}</p>
+              <h4>Numero de referencia: {referencia}</h4>
               <p>Descripcion de viviendas: {descripcion}</p>
               <p>Nombre del propietario: {nombrePropietario}</p>
               <p>Telefono del propietario: {telefonoPropietario}</p>

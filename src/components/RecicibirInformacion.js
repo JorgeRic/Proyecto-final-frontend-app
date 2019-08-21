@@ -17,7 +17,7 @@ class RecibirInformacion extends Component {
   render(){
     return (
     
-    <>
+    <div className="recibir-inform">
     <p>Si esta interesado en recibir más información sobre esta vivienda, pongase en contacto con nosotros:</p>
           <label htmlFor="titulo" className="datos-login"><h2>Nombre:</h2></label>
           <input type="text" className="cuadro-informacion" id="nombre" placeholder="nombre" name= "nombre" ></input>
@@ -34,7 +34,7 @@ class RecibirInformacion extends Component {
 
           
           <NavLink to='/list' activeClassName=""><button className="btn-recibir-inform"><h3>Volver a lista de viviendas</h3></button></NavLink>
-    </>
+    </div>
      
     
   )}

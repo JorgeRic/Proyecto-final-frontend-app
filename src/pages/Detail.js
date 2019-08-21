@@ -38,7 +38,7 @@ render() {
   console.log('Hola', this.state.vivienda)
   const {vivienda } = this.state
     return (
-      <div className = 'image-container'>
+      <div className = 'parte-informacion'>
         <Card 
                 clase={vivienda.clase}
                 titulo={vivienda.titulo} 
@@ -56,9 +56,9 @@ render() {
                 referencia={vivienda.referencia} 
                 descripcion={vivienda.descripcion}
                 />
-               <p>Estoy interesado en recibir más información de esta vivienda: </p>
-               <NavLink to='/recibirinformacion' activeClassName="">Recibir informacion</NavLink>
-        <button onClick={this.goToPreviousPage}>Volver a la lista</button>
+               <h3 className="recibir-inform">Estoy interesado en recibir más información de esta vivienda: </h3>
+               <NavLink to='/recibirinformacion' activeClassName=""><button className="btn-select-detail"><h3>Recibir informacion</h3></button></NavLink>
+              <button className="btn-select-detail" onClick={this.goToPreviousPage}><h3>Volver a la lista</h3></button>
         {/* { vivienda ? <img src = {image} alt={title} className='image-details'/>: <p>Loading....</p>} */}
         
       </div>
