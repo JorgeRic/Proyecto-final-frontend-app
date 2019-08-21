@@ -1,4 +1,5 @@
 import React from 'react'
+import Map from "./MapBox";
 
 function Card(props) {
   const { mostrarUnaPhoto, imagenes, titulo, clase, tipo, precio, ciudad, direccion, metros, numHab, numAseos, numGarajes, piscina, jardin, referencia, descripcion} = props;
@@ -25,7 +26,8 @@ function Card(props) {
       <p>Piscina: {piscina}</p>
       <p>Jardin: {jardin}</p>
       <p>Numero de referencia: {referencia}</p>
-      <p>Descripcion de viviendas: {descripcion}</p>
+      <p>Descripcion de vivienda: {descripcion}</p>
+      <Map></Map>
     
 
     </div>
