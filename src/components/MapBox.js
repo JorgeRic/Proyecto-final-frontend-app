@@ -17,13 +17,18 @@ class Map extends Component {
     })
   }
 
-  redraw = ({project}, vivienda) => {
-    const [cx, cy] = project([vivienda.long, vivienda.lat]);
-    return <circle cx={cx} cy={cy} r={4} fill="blue" />;
+  redraw = ({project}) => {
+    this.state.viviendas.map((vivienda) => {
+      const [cx, cy] = project([this.vivienda.long, this.vivienda.lat]);
+      return <circle cx={cx} cy={cy} r={4} fill="blue" />;
+    });
   };
 
   render() {
-    const {viewport, token} = this.state;
+    if (this.state.viviendas.length == 0)
+      return null;
+
+    const {viewport, token, viviendas} = this.state;
     return (
       <ReactMapGL {...viewport}
         width="100%"
@@ -33,9 +38,9 @@ class Map extends Component {
         <GeolocateControl 
           positionOptions={{enableHighAccuracy: true}}
           trackUserLocation={true}
-
         />
-        {/*<SVGOverlay redraw={this.redraw} />*/}
+
+        <SVGOverlay redraw={this.redraw} />
       </ReactMapGL>
     );
   }
