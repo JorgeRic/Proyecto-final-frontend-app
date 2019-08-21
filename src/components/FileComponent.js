@@ -42,20 +42,22 @@ class FileUploadComponent extends Component {
   render() {
     const {isUploading, progress, avatarURL} = this.state;
     return (
-      <div>
-        <label>Subir imagen:</label>
-        {isUploading && <p>Progress: {progress}</p>}
-        {avatarURL && <img src={avatarURL} alt='name'/>}
-        <FileUploader
-          accept="image/*"
-          name="image"
-          randomizeFilename
-          storageRef={firebase.storage().ref("images")}
-          onUploadStart={this.handleUploadStart}
-          onUploadError={this.handleUploadError}
-          onUploadSuccess={this.handleUploadSuccess}
-          onProgress={this.handleProgress}
-        />
+      <div >
+        <form>
+          <label className='datos-creacion'>Subir imagen:</label>
+          {isUploading && <p>Progress: {progress}</p>}
+          {avatarURL && <img src={avatarURL} alt='name'/>}
+          <FileUploader className="center-input"
+            accept="image/*"
+            name="image"
+            randomizeFilename
+            storageRef={firebase.storage().ref("images")}
+            onUploadStart={this.handleUploadStart}
+            onUploadError={this.handleUploadError}
+            onUploadSuccess={this.handleUploadSuccess}
+            onProgress={this.handleProgress}
+          />
+        </form>
       </div>
     );
   }

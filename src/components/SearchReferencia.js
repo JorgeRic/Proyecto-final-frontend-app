@@ -65,34 +65,34 @@ class SearchReferencia extends Component {
             return (
               
               
-              <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
+              
+          <PrivateCard   
+            clase={vivienda.clase}
+            titulo={vivienda.titulo} 
+            imagenes={vivienda.imagenes} 
+            tipo={vivienda.tipo} 
+            city={vivienda.ciudad}
+            direccion={vivienda.direccion}
+            precio={vivienda.precio} 
+            metros={vivienda.metros}
+            numHab={vivienda.numHab} 
+            numAseos={vivienda.numAseos} 
+            referencia={vivienda.referencia} 
+            numGarajes={vivienda.numGarajes}
+            piscina={vivienda.piscina}
+            descripcion={vivienda.descripcion}
+            nombrePropietario={vivienda.nombrePropietario}
+            telefonoPropietario={vivienda.telefonoPropietario}
+            mailPropietario={vivienda.mailPropietario}
+            onclick={this.handleClick}
+          />
 
-            <PrivateCard   
-              clase={vivienda.clase}
-              titulo={vivienda.titulo} 
-              imagenes={vivienda.imagenes} 
-              tipo={vivienda.tipo} 
-              city={vivienda.ciudad}
-              direccion={vivienda.direccion}
-              precio={vivienda.precio} 
-              metros={vivienda.metros}
-              numHab={vivienda.numHab} 
-              numAseos={vivienda.numAseos} 
-              referencia={vivienda.referencia} 
-              numGarajes={vivienda.numGarajes}
-              piscina={vivienda.piscina}
-              descripcion={vivienda.descripcion}
-              nombrePropietario={vivienda.nombrePropietario}
-              telefonoPropietario={vivienda.telefonoPropietario}
-              mailPropietario={vivienda.mailPropietario}
-              onclick={this.handleClick}
-              />
-
-          </NavLink >
           
           )
         }) : <p></p>
         }
+          {/* <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
+          </NavLink > */}
         <form onSubmit={this.handleFormSubmit}>
           <label htmlFor='referencia' className="datos-login"><h2>Referencia:</h2></label>
           <input id='referencia' className="cuadro-login" type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
