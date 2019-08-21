@@ -26,6 +26,7 @@ import NotFound from './pages/NotFound'
 import List from './pages/List'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const config = {
 apiKey: "AIzaSyDeRbk1dsAHiQyr1T1FRhk1d317hzWaAKc",
@@ -33,7 +34,6 @@ authDomain:"inmob-frontend.firebaseapp.com",
 storageBucket: "gs://inmob-frontend.appspot.com/"
 }
 firebase.initializeApp(config)
-
 
 
 class App extends Component {

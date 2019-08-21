@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactMapGL, {GeolocateControl} from "react-map-gl";
+import ReactMapGL, {GeolocateControl, SVGOverlay} from "react-map-gl";
 
 class Map extends Component {
   state = {
@@ -21,6 +21,7 @@ class Map extends Component {
           trackUserLocation={true}
 
         />
+        <SVGOverlay redraw={this.redraw} />
       </ReactMapGL>
     );
   }
