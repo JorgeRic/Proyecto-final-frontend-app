@@ -59,9 +59,8 @@ class SearchReferencia extends Component {
    console.log(this.state.viviendas.data)
    
    return (
-     <div>
-       <h1>Buscar por referencia:</h1>
-       
+     <div class="main-login">
+ 
        {viviendas.data ? viviendas.data.map((vivienda)=>{
             return (
               
@@ -95,10 +94,10 @@ class SearchReferencia extends Component {
         }) : <p></p>
         }
         <form onSubmit={this.handleFormSubmit}>
-          <label htmlFor='referencia'>Referencia:</label>
-          <input id='referencia' type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
+          <label htmlFor='referencia' className="datos-login"><h2>Referencia:</h2></label>
+          <input id='referencia' className="cuadro-login" type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
 
-          <button type ="submit">Search</button>
+          <button type ="submit" className="btn-select-search"><h2>Search</h2></button>
          
       </form>
      </div>

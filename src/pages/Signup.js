@@ -35,21 +35,19 @@ class Signup extends Component {
     console.log(this.props)
     const { username, password } = this.state;
     return (
-      <>
       
+      <div className="main-login">
         <form onSubmit={this.handleFormSubmit}>
-          <label htmlFor='username'>Username:</label>
-          <input id='username' type='text' name='username' value={username} onChange={this.handleChange}/>
-          <label htmlFor='password'>Password:</label>
-          <input id='password' type='password' name='password' value={password} onChange={this.handleChange} />
-          <input type='submit' value='Signup' />
+          <label className="datos-login" htmlFor='username'><h2>Username:</h2></label>
+          <input id='username' className="cuadro-login" type='text' name='username' value={username} onChange={this.handleChange}/>
+          <label className="datos-login" htmlFor='password'><h2>Password:</h2></label>
+          <input id='password' className="cuadro-login" type='password' name='password' value={password} onChange={this.handleChange} />
+          <button type='submit' value="Signup" className="btn-select-search"><h2>Signup</h2></button>
         </form>
+      </div>
+       
 
-        {/* <p>Already have account? 
-          <Link to={'/login'}> Login</Link>
-        </p> */}
-
-      </>
+      
     )
   }
 }
