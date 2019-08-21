@@ -1,22 +1,30 @@
 import React, { Component } from "react";
-import ReactMapGL, {GeolocateControl} from "react-map-gl";
+import ReactMapGL, {GeolocateControl, SVGOverlay} from "react-map-gl";
 
 class Map extends Component {
   state = {
-    viewport: {longitude: -122.45, latitude: 37.78, zoom: 14}
-  }
+    viewport: {longitude: -0.5076294, latitude: 38.3579029, zoom: 14},
+    token: "pk.eyJ1Ijoiam9yZ2ViaXJyYSIsImEiOiJjanpqbjBoMmIwYXh1M21xbmFmZXBuczh1In0.xMzVdgrHabAeL78Zm3pQ8Q"
+  };
+
+  redraw = ({project}) => {
+    const [cx, cy] = project([-0.5076294, 38.3579029]);
+    return <circle cx={cx} cy={cy} r={4} fill="blue" />;
+  };
 
   render() {
-    const {viewport} = this.state;
+    const {viewport, token} = this.state;
     return (
       <ReactMapGL {...viewport}
         width="100vw"
         height="100vh"
+        mapboxApiAccessToken={token}
         onViewportChange={viewport => this.setState({viewport})}>
         <GeolocateControl 
           positionOptions={{enableHighAccuracy: true}}
           trackUserLocation={true}
         />
+        <SVGOverlay redraw={this.redraw} />
       </ReactMapGL>
     );
   }
