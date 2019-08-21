@@ -42,12 +42,12 @@ class FileUploadComponent extends Component {
   render() {
     const {isUploading, progress, avatarURL} = this.state;
     return (
-      <div>
+      <div >
         <form>
-          <label>Subir imagen:</label>
+          <label className='datos-creacion'>Subir imagen:</label>
           {isUploading && <p>Progress: {progress}</p>}
           {avatarURL && <img src={avatarURL} alt='name'/>}
-          <FileUploader
+          <FileUploader className="center-input"
             accept="image/*"
             name="image"
             randomizeFilename
