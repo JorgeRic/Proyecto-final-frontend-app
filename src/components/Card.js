@@ -1,34 +1,36 @@
 import React from 'react'
+import Map from "./MapBox";
 
 function Card(props) {
-  const { mostrarUnaPhoto, imagenes, titulo, clase, tipo, precio, ciudad, direccion, metros, numHab, numAseos, numGarajes, piscina, jardin, referencia, descripcion} = props;
+  const { mostrarUnaPhoto, vivienda } = props;
+  debugger;
   return (
     <div className="card">
-      <h3>{titulo}</h3>
-      <p>Vivienda en {clase}</p>
+      <h3>{vivienda.titulo}</h3>
+      <p>Vivienda en {vivienda.clase}</p>
       <div className="container-foto">
       {
         mostrarUnaPhoto 
-          ? (<img className="foto" src={imagenes[0]}/>)
-          : imagenes
-            ? imagenes.map((img) =>  (<img key={img} src={img}/>))
+          ? (<img className="foto" src={vivienda.imagenes[0]}/>)
+          : vivienda.imagenes
+            ? vivienda.imagenes.map((img) => (<img key={img} src={img}/>))
             : null
       }
         </div>
-      <p>Tipo de vivienda: {tipo}</p>
-      <h3>Precio: {precio} euros</h3>
-      <p>Ciudad: {ciudad}</p>
-      <p>Direccion de la vivienda: {direccion}</p>
-      <p>metros cuadrados: {metros}</p>
-      <p>Numero de habitaciones: {numHab}</p>
-      <p>Numero de baños: {numAseos}</p>
-      <p>Numero de garajes:{numGarajes}</p>
-      <p>Piscina: {piscina}</p>
-      <p>Jardin: {jardin}</p>
-      <p>Numero de referencia: {referencia}</p>
-      <p>Descripcion de viviendas: {descripcion}</p>
-    
+      <p>Tipo de vivienda: {vivienda.tipo}</p>
+      <h3>Precio: {vivienda.precio} euros</h3>
+      <p>Ciudad: {vivienda.ciudad}</p>
+      <p>Direccion de la vivienda: {vivienda.direccion}</p>
+      <p>metros cuadrados: {vivienda.metros}</p>
+      <p>Numero de habitaciones: {vivienda.numHab}</p>
+      <p>Numero de baños: {vivienda.numAseos}</p>
+      <p>Numero de garajes:{vivienda.numGarajes}</p>
+      <p>Piscina: {vivienda.piscina}</p>
+      <p>Jardin: {vivienda.jardin}</p>
+      <p>Numero de referencia: {vivienda.referencia}</p>
+      <p>Descripcion de vivienda: {vivienda.descripcion}</p>
 
+      { mostrarUnaPhoto ? ('') : (<Map viviendaActual={vivienda}></Map>) }
     </div>
   )
 }

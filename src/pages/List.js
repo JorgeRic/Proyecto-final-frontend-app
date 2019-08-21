@@ -8,23 +8,23 @@ class List extends Component {
     viviendas: []
   }
 
-componentDidMount(){
-  console.log(viviendaBackendService)
-  viviendaBackendService.getAllViviendas()
-  .then(response => {
-    console.log(response.data.listOfViv)
-    this.setState({
-      viviendas: response.data.listOfViv
-
+  componentDidMount(){
+    console.log(viviendaBackendService)
+    viviendaBackendService.getAllViviendas()
+    .then(response => {
+      console.log(response.data.listOfViv)
+      this.setState({
+        viviendas: response.data.listOfViv
+      })
     })
-  })
-}
-
-
+  }
 
   render() {
-    const {viviendas} = this.state
-    console.log(viviendas)
+    if (this.state.viviendas.length == 0)
+      return null;
+
+    const {viviendas} = this.state;
+
     return (
       <div>
         <h1>LISTA DE VIVIENDAS</h1>
@@ -38,31 +38,14 @@ componentDidMount(){
               </NavLink>
                 <Card 
                   mostrarUnaPhoto={true}
-                  clase={vivienda.clase} 
-                  titulo={vivienda.titulo} 
-                  imagenes={vivienda.imagenes} 
-                  tipo={vivienda.tipo} 
-                  precio={vivienda.precio} 
-                  metros={vivienda.metros}
-                  ciudad={vivienda.ciudad}
-                  direccion={vivienda.direccion}
-                  numHab={vivienda.numHab} 
-                  numAseos={vivienda.numAseos} 
-                  numGarajes={vivienda.numGarajes}
-                  piscina={vivienda.piscina}
-                  jardin={vivienda.jardin}
-                  referencia={vivienda.referencia} 
-                  descripcion={vivienda.descripcion}
-
+                  vivienda={vivienda}
                   onclick={this.handleClick}
-
-                  />
+                />
              
               </div>
             )
           }) : <p></p>
           }
-        
       </div>
     )
   }

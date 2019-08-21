@@ -11,13 +11,10 @@ class PrivateList extends Component {
   }
 
   componentDidMount(){
- 
     viviendaBackendService.getAllViviendas()
     .then(response => {
-      
       this.setState({
         viviendas: response.data.listOfViv
-  
       })
     })
   }

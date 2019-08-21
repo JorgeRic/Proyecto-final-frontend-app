@@ -26,32 +26,35 @@ class CrearVivienda extends Component {
     telefonoPropietario: '',
     mailPropietario: '',
     viviendas:'',
+    lat: '',
+    long: '',
     redirect: false,
-    
   };
 
   handelSubmit= (event) => {
-    const {titulo, tipo, imagenes, precio, numHab, numAseos, clase,referencia, descripcion, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
+    const {titulo, tipo, imagenes, precio, numHab, numAseos, clase,referencia, descripcion, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario, lat, long} = this.state;
     event.preventDefault();
     viviendaBackendService.addOneVivienda({
-    titulo,
-    clase,
-    imagenes,
-    tipo,
-    ciudad,
-    direccion,
-    metros,
-    precio,
-    jardin,
-    numHab,
-    numAseos,
-    numGarajes,
-    piscina,
-    referencia,
-    descripcion,
-    nombrePropietario,
-    telefonoPropietario,
-    mailPropietario
+      titulo,
+      clase,
+      imagenes,
+      tipo,
+      ciudad,
+      direccion,
+      metros,
+      precio,
+      jardin,
+      numHab,
+      numAseos,
+      numGarajes,
+      piscina,
+      referencia,
+      descripcion,
+      nombrePropietario,
+      telefonoPropietario,
+      mailPropietario,
+      lat,
+      long
     })
     .then(() => {
       this.setState({
@@ -75,7 +78,7 @@ class CrearVivienda extends Component {
   };
 
   render() {
-    const {titulo, imagenes, viviendas, clase, tipo, precio, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario} = this.state
+    const {titulo, imagenes, viviendas, clase, tipo, precio, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario, lat, long} = this.state
     return (
       <div className="margenes-creacion-vivienda">
        
@@ -167,6 +170,12 @@ class CrearVivienda extends Component {
         
           <label htmlFor="mailPropietario"className="datos-creacion" >Mail del propietario</label>
           <input type="email" id="mailPropietario" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "mailPropietario" value={mailPropietario} ></input>
+
+          <label htmlFor="lat">Latitud</label>
+          <input type="text" id="lat" placeholder="" onChange={this.handleOnChange } name= "lat" value={lat} ></input>
+
+          <label htmlFor="long">Longitud</label>
+          <input type="text" id="long" placeholder="" onChange={this.handleOnChange } name= "long" value={long} ></input>
 
           <button type='submit' className="btn-select-search"><h2>Añadir</h2></button>
         </form>
