@@ -70,7 +70,7 @@ class ModificarVivienda extends Component {
       return (
         <div>
         
-          <Link to='/searchreferencia' ><button className="btn-select-search">Buscar por numero de referencia</button></Link>
+          <Link to='/searchreferencia' ><button className="btn-select-search"><h2>Buscar por numero de referencia</h2></button></Link>
           <p>Numero de viviendas en cartera: {viviendas.length}</p>
           {/* <Link to='/searchreferencia'><button>Buscar por referencia</button></Link> */}
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
