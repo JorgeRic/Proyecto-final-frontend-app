@@ -43,20 +43,23 @@ class EliminarVivienda extends Component {
     return (
      
         <div>
-          <h1>Eliminar vivienda</h1>
-          <Link to='/searchreferencia'><button>Buscar por numero de referencia</button></Link>
+          <h1 className="centrar-textos">ELIMINAR VIVIENDA</h1>
+          <Link to='/searchreferencia'><button className="btn-select-search"><h2>Buscar por numero de referencia</h2></button></Link>
           {viviendas.length > 0 ? viviendas.map((vivienda) => {
             return (
-              <article key = {vivienda._id}>
-              <h3>Numero de referencia: {vivienda.referencia}</h3>
-              <p>Titulo: {vivienda.titulo}</p>
-              <p>Vivienda en: {vivienda.clase}</p>
-              <p>Tipo de vivienda: {vivienda.tipo}</p>
-              <p>Precio: {vivienda.precio}</p>
-              <p>Ciudad: {vivienda.ciudad}</p>
-                <button onClick = {() => {
+              <article className="cuadro-delete" key = {vivienda._id}>
+               <div className="container-delete">
+                <h1>Numero de referencia: {vivienda.referencia}</h1>
+                <p>Titulo: {vivienda.titulo}</p>
+                <p>Vivienda en: {vivienda.clase}</p>
+                <p>Tipo de vivienda: {vivienda.tipo}</p>
+                <p>Precio: {vivienda.precio}</p>
+                <p>Ciudad: {vivienda.ciudad}</p>
+               </div>
+
+                <button className="btn-select-delete" onClick = {() => {
                 this.handleDeleteClick(vivienda._id)
-                 }}>Eliminar</button>
+                 }}><h2>Eliminar referencia: {vivienda.referencia}</h2></button>
               </article>
             )
           }) : <p>Loading ...</p>

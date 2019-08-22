@@ -33,26 +33,27 @@ export default class ViviendaForm extends Component {
       <div>
         <form onSubmit ={this.handelSubmit}>
                 
-                 <h5>Numero de referencia: {vivienda.referencia}</h5>   
+            <h2 className="cartera-viv">Numero de referencia de la vivienda: {vivienda.referencia}</h2> 
 
-                <label htmlFor="titulo">Titulo</label>
+                <label htmlFor="titulo" className="datos-creacion">Titulo</label>
                  <input type="text" 
                  id="titulo"
+                 className="cuadro-creacion"
                  placeholder="modificar datos ..." 
                  name="titulo"
                  defaultValue={vivienda.titulo}
                  onChange={ this.handleUpdate }
                  />
 
-                <label htmlFor="clase">Clase</label>
-                <select name='clase' onChange={this.handleUpdate } defaultValue={vivienda.clase} id="clase">
+                <label htmlFor="clase" className="datos-creacion">Clase</label>
+                <select name='clase' className="select-creacion" onChange={this.handleUpdate } defaultValue={vivienda.clase} id="clase">
                   <option value=''>modificar datos ...</option>
                   <option value='venta'>Venta</option>
                   <option value='alquiler'>Alquiler</option>
                  </select> 
             
-                <label htmlFor="type">Tipo de vivienda</label>
-                <select name='tipo' onChange={this.handleUpdate } defaultValue={vivienda.tipo} id="tipo">
+                <label htmlFor="type" className="datos-creacion">Tipo de vivienda</label>
+                <select name='tipo'className="select-creacion" onChange={this.handleUpdate } defaultValue={vivienda.tipo} id="tipo">
                   <option value=''>modificar datos ...</option>
                   <option value='piso'>Piso</option>
                   <option value='chalet'>Chalet</option>
@@ -62,8 +63,8 @@ export default class ViviendaForm extends Component {
                   <option value='atico'>Atico</option>
                 </select>
 
-                <label htmlFor="ciudad">Ciudad</label>
-                <select name="ciudad" onChange={this.handleUpdate } defaultValue={vivienda.ciudad} id="ciudad">
+                <label htmlFor="ciudad" className="datos-creacion">Ciudad</label>
+                <select name="ciudad" className="select-creacion" onChange={this.handleUpdate } defaultValue={vivienda.ciudad} id="ciudad">
                   <option value=''>modificar datos ...</option>
                   <option value='Alicante'>Alicante</option>
                   <option value='San Vicente'>San Vicente</option>
@@ -73,107 +74,117 @@ export default class ViviendaForm extends Component {
                   <option value='Agost'>Agost</option>
                 </select>
 
-                <label htmlFor="direccion">Direccion de la vivienda</label>
+                <label htmlFor="direccion" className="datos-creacion">Direccion de la vivienda</label>
                 <input type="text" 
                 id="direccion" 
+                className="cuadro-creacion"
                 defaultValue={vivienda.direccion}
                 placeholder="modificar datos ..." 
                 onChange={this.handleUpdate } 
                 name= "direccion" 
                 />
 
-                <label htmlFor="precio">Precio actual</label>
+                <label htmlFor="precio" className="datos-creacion">Precio actual</label>
                 <input 
                   type="number"
                   id="precio"
+                  className="cuadro-creacion"
                   defaultValue={vivienda.precio}
                   placeholder="modificar datos ..." 
                   name= "precio"
                   onChange={this.handleUpdate}
                 />
                 
-                <label htmlFor="metros">Metros de la vivienda</label>
+                <label htmlFor="metros" className="datos-creacion">Metros de la vivienda</label>
                 <input type="number" 
                 id="metros" 
+                className="cuadro-creacion"
                 defaultValue={vivienda.metros}
                 onChange={this.handleUpdate } 
                 name= "metros" 
                 placeholder="modificar datos ..." 
                 />
 
-                <label htmlFor="numHab">Habitaciones</label>
+                <label htmlFor="numHab" className="datos-creacion">Habitaciones</label>
                 <input type="number" 
                 id="numHab" 
+                className="cuadro-creacion"
                 defaultValue={vivienda.numHab}
                 onChange={this.handleUpdate } 
                 name= "numHab" 
                 placeholder="modificar datos ..." 
                 />
 
-                <label htmlFor="numAseos">Baños</label>
+                <label htmlFor="numAseos" className="datos-creacion">Baños</label>
                 <input type="number" 
                 id="numAseos" 
+                className="cuadro-creacion"
                 defaultValue={vivienda.numAseos}
                 onChange={this.handleUpdate } 
                 name= "numAseos" 
                 placeholder="modificar datos ..."  
                 />
 
-                <label htmlFor="numGarajes">Numero de garajes</label>               
+                <label htmlFor="numGarajes" className="datos-creacion">Numero de garajes</label>               
                 <input type="number" 
                 id="numGarajes" 
+                className="cuadro-creacion"
                 defaultValue={vivienda.numGarajes}
                 placeholder="modificar datos ..." 
                 onChange={this.handleUpdate } 
                 name= "numGarajes" 
                 />
 
-                <label htmlFor="jardin">Jardin</label>
-                <select name="jardin" onChange={this.handleUpdate } defaultValue={vivienda.jardin}  id="jardin">
+                <label htmlFor="jardin" className="datos-creacion">Jardin</label>
+                <select name="jardin" className="select-creacion" onChange={this.handleUpdate } defaultValue={vivienda.jardin}  id="jardin">
                   <option value=''>modificar datos ...</option>
                   <option value='Si'>Si</option>
                   <option value='No'>No</option>
                 </select>
 
-                <label htmlFor="piscina">Piscina</label>
-                <select name="piscina" onChange={this.handleUpdate } defaultValue={vivienda.piscina} id="piscina">
+                <label htmlFor="piscina" className="datos-creacion">Piscina</label>
+                <select name="piscina" className="select-creacion" onChange={this.handleUpdate } defaultValue={vivienda.piscina} id="piscina">
                   <option value=''>modificar datos ...</option>  
                   <option value='Si'>Si</option>
                   <option value='No'>No</option>
                 </select>
 
-                <label htmlFor="descripcion">Descripcion de la vivienda</label>
+                <label htmlFor="descripcion" className="datos-creacion">Descripcion de la vivienda</label>
                 <input type="text" 
                 id="descripcion" 
+                className="cuadro-creacion"
                 defaultValue={vivienda.descripcion}
                 onChange={this.handleUpdate } 
                 name= "descripcion" 
                 placeholder="modificar datos ..." 
                 />
             
-                  <p>Datos de contacto:</p>
+                  <h3>Datos de contacto:</h3>
 
-               <label htmlFor="nombrePropietario">Nombre del propietario</label>
+               <label htmlFor="nombrePropietario" className="datos-creacion">Nombre del propietario</label>
                <input type="text" 
                id="nombrePropietario" 
+               className="cuadro-creacion"
                placeholder="modificar datos ..." 
                defaultValue={vivienda.nombrePropietario}
                onChange={this.handleUpdate } 
                name= "nombrePropietario" 
                ></input>
         
-               <label htmlFor="telefonoPropietario">TelefonoPropietario</label>
+               <label htmlFor="telefonoPropietario" className="datos-creacion">TelefonoPropietario</label>
                <input type="text" 
                id="telefonoPropietario" 
+               className="cuadro-creacion"
                placeholder="modificar datos ..." 
                defaultValue={vivienda.telefonoPropietario}
                onChange={this.handleUpdate } 
                name= "telefonoPropietario" 
                ></input>
         
-               <label htmlFor="mailPropietario">Mail del propietario</label>
+               <label htmlFor="mailPropietario" className="datos-creacion">Mail del propietario</label>
                <input type="email" 
                id="mailPropietario" 
+               className="cuadro-creacion"
                placeholder="modificar datos ..." 
                defaultValue={vivienda.mailPropietario}
                onChange={this.handleUpdate } 
@@ -182,23 +193,10 @@ export default class ViviendaForm extends Component {
 
 
   
-                <button type='submit'>Modificar</button>
+                <button type='submit' className="btn-select-search"><h2>Modificar</h2></button>
               </form>
       </div>
     )
   }
 }
 
-//         <label htmlFor="imagenes">Image</label>
-//         <input type="text" id="image" defaultValue={vivienda.image} name= "image" onChange={this.handleOnChange }></input>
-//        
-//      
-//         
-//         <label htmlFor="numHab">Numero de habitaciones</label>
-//         <input type="number" id="numHab" onChange={this.handleOnChange } name= "numHab" defaultValue={vivienda.numHab} ></input>
-//         <label htmlFor="referencia">Numero de referencia</label>
-//         <input type="number" id="referencia" placeholder="" onChange={this.handleOnChange } name= "referencia" defaultValue={vivienda.referencia} ></input>
-//         <label htmlFor="numAseos">Baños</label>
-//         <input type="number" id="numAseos" placeholder="" onChange={this.handleOnChange } name= "numAseos" defaultValue={vivienda.numAseos} ></input>
-//         <label htmlFor="description">Descripcion de la vivienda</label>
-//         <input type="description" id="description" placeholder="" onChange={this.handleOnChange } name= "description" defaultValue={vivienda.description} ></input>
