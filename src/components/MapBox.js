@@ -4,7 +4,7 @@ import viviendaBackendService from "../services/viv-backend-service";
 
 class Map extends Component {
   state = {
-    viewport: {longitude: -122.45, latitude: 37.78, zoom: 14},
+    viewport: {longitude: parseFloat(this.props.viviendaActual.long), latitude: parseFloat(this.props.viviendaActual.lat), zoom: 14},
     token: "pk.eyJ1Ijoiam9yZ2ViaXJyYSIsImEiOiJjanpqbjBoMmIwYXh1M21xbmFmZXBuczh1In0.xMzVdgrHabAeL78Zm3pQ8Q",
     viviendas: []
   };
@@ -18,10 +18,19 @@ class Map extends Component {
   }
 
   redraw = ({project}) => {
-    this.state.viviendas.map((vivienda) => {
-      const [cx, cy] = project([this.vivienda.long, this.vivienda.lat]);
-      return <circle cx={cx} cy={cy} r={4} fill="blue" />;
-    });
+    if (this.state.viviendas.length > 0) {
+      let render = this.state.viviendas.map((vivienda) => {
+        if(vivienda.lat && vivienda.long) {
+          let circle = vivienda._id === this.props.viviendaActual._id ?
+            {r: 8, fill: 'orange'} : {r: 5, fill: '#91c03c'};
+
+          let [cx, cy] = project([parseFloat(vivienda.long), parseFloat(vivienda.lat)]);
+          return <circle cx={cx} cy={cy} r={circle.r} fill={circle.fill} key={vivienda.long + vivienda.lat} />;
+        }
+      });
+
+      return render
+    }
   };
 
   render() {
@@ -35,12 +44,12 @@ class Map extends Component {
         height="40vh"
         mapboxApiAccessToken={token}
         onViewportChange={viewport => this.setState({viewport})}>
-        <GeolocateControl 
-          positionOptions={{enableHighAccuracy: true}}
-          trackUserLocation={true}
-        />
+        {/*<GeolocateControl */}
+        {/*  positionOptions={{enableHighAccuracy: true}}*/}
+        {/*  trackUserLocation={true}*/}
+        {/*/>*/}
 
-        <SVGOverlay redraw={this.redraw} />
+        {this.props.viviendaActual.lat && this.props.viviendaActual.long && viviendas.length > 0 ? (<SVGOverlay redraw={this.redraw} />) : ('')}
       </ReactMapGL>
     );
   }
