@@ -3,7 +3,6 @@ import Map from "./MapBox";
 
 function Card(props) {
   const { mostrarUnaPhoto, vivienda } = props;
-  debugger;
   return (
     <div className="card">
       <h3>{vivienda.titulo}</h3>
@@ -30,7 +29,7 @@ function Card(props) {
       <p>Numero de referencia: {vivienda.referencia}</p>
       <p>Descripcion de vivienda: {vivienda.descripcion}</p>
 
-      { mostrarUnaPhoto ? ('') : (<Map viviendaActual={vivienda}></Map>) }
+      { vivienda.lat && vivienda.long && !mostrarUnaPhoto && <Map viviendaActual={vivienda}></Map> }
     </div>
   )
 }
