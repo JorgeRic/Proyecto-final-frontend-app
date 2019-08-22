@@ -151,22 +151,7 @@ class SearchVivienda extends Component {
   return ( <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
 
   <Card   
-    clase={vivienda.clase}
-    titulo={vivienda.titulo} 
-    imagenes={vivienda.imagenes} 
-    tipo={vivienda.tipo} 
-    ciudad={vivienda.ciudad}
-    direccion={vivienda.direccion}
-    precio={vivienda.precio} 
-    metros={vivienda.metros}
-    numHab={vivienda.numHab} 
-    jardin={vivienda.jardin}
-    numAseos={vivienda.numAseos} 
-    referencia={vivienda.referencia} 
-    numGarajes={vivienda.numGarajes}
-    piscina={vivienda.piscina}
-    descripcion={vivienda.descripcion}
-  
+    vivienda={vivienda}
     onclick={this.handleClick}
     />
 
