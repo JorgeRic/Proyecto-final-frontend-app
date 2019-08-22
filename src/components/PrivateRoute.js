@@ -1,10 +1,6 @@
 import React from 'react'
 import {Route, Redirect} from 'react-router-dom'
-import withAuth from './withAuth'
-import NavBar from './NavBar';
-import { Link } from 'react-router-dom';
-
-
+import withAuth from './withAuth';
 
 function PrivateRoute(props) {
   const {isLoggedIn, component: Component, ...rest} = props;

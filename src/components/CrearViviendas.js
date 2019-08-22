@@ -78,7 +78,7 @@ class CrearVivienda extends Component {
   };
 
   render() {
-    const {titulo, imagenes, viviendas, clase, tipo, precio, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario, lat, long} = this.state
+    const {titulo, clase, tipo, precio, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario, lat, long} = this.state
     return (
       <div className="margenes-creacion-vivienda">
        

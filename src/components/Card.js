@@ -16,6 +16,7 @@ function Card(props) {
             : null
       }
         </div>
+      <div className="texto-card">
       <p>Tipo de vivienda: {vivienda.tipo}</p>
       <h3>Precio: {vivienda.precio} euros</h3>
       <p>Ciudad: {vivienda.ciudad}</p>
@@ -28,8 +29,9 @@ function Card(props) {
       <p>Jardin: {vivienda.jardin}</p>
       <p>Numero de referencia: {vivienda.referencia}</p>
       <p>Descripcion de vivienda: {vivienda.descripcion}</p>
+      </div>
 
-      { vivienda.lat && vivienda.long && !mostrarUnaPhoto && <Map viviendaActual={vivienda}></Map> }
+      { vivienda.lat && vivienda.long && <Map viviendaActual={vivienda}></Map> }
     </div>
   )
 }

@@ -26,7 +26,6 @@ class FileUploadComponent extends Component {
       .child(filename)
       .getDownloadURL()
       .then(url => {
-        console.log(url);
         this.setState({ avatarURL: url });
         // En este punto tenemos la url de la imagen.
         // Hay que pasarla al componente superior para que actualice el state
@@ -34,11 +33,8 @@ class FileUploadComponent extends Component {
         this.props.onUploadFinished(url);
       });
 
-    console.log('url:', this.state.avatarURL);
   };
 
-  
- 
   render() {
     const {isUploading, progress, avatarURL} = this.state;
     return (

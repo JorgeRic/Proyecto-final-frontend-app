@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import withAuth from '../components/withAuth'
-
-// import auth from '../services/auth-service';
 
 class Login extends Component {
   state = {
@@ -26,7 +23,6 @@ class Login extends Component {
     this.setState({[name]: value});
   }
   
-
   render() {
     const { username, password } = this.state;
     return (
@@ -39,7 +35,6 @@ class Login extends Component {
           <button type='submit' value="login" className="btn-select-search"><h2>Login</h2></button>
         </form>
 
-       
       </div>
     )
   }

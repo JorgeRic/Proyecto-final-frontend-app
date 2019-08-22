@@ -18,8 +18,6 @@ const withAuth = (Comp) => {
             />
           )}
        
-
-
         </AuthContext.Consumer>
       )
     }

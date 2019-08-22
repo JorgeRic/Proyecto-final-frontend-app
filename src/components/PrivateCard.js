@@ -14,6 +14,7 @@ export default function PrivateCard(props) {
             : null
          }
         </div>
+         <div className="texto-card">
               <p>Vivienda en {clase}</p>
               <p>Tipo de vivienda: {tipo}</p>
               <h3>Precio: {precio} euros</h3>
@@ -30,6 +31,7 @@ export default function PrivateCard(props) {
               <p>Nombre del propietario: {nombrePropietario}</p>
               <p>Telefono del propietario: {telefonoPropietario}</p>
               <p>Mail del propietario: {mailPropietario}</p>
+         </div>
     </div>
       )
     }

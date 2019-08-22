@@ -27,7 +27,7 @@ class RecibirInformacion extends Component {
           <input type="text" className="cuadro-informacion" id="titulo" placeholder="email personal" name= "titulo" ></input>
           <label htmlFor="titulo" className="datos-login"><h3>¿En que podemos ayudarle?</h3></label>
           <input type="text" className="cuadro-informacion" id="nombre" placeholder="Me gustaría hacer una visita a esta vivienda......." name= "nombre" ></input>
-          { this.state.enviado ? <h4>Mail enviado. En breve nos pondremos en contacto con usted. Gracias</h4> : <button className="btn-select-search" onClick={this.manageSubmit}><h2>Enviar</h2></button> }<br></br>
+          { this.state.enviado ? <h4 className="mail-enviado">Mail enviado. En breve nos pondremos en contacto con usted. <h3>Gracias</h3></h4> : <button className="btn-select-search" onClick={this.manageSubmit}><h2>Enviar</h2></button> }<br></br>
           
           {/* <input type="submit" value="SUBMIT EMAIL TO: info@whatshouldisay.ca" <a href="mailto:info@whatshouldisay.ca" /> */}
           {/* <input type="submit" value="Send Email" />  */}

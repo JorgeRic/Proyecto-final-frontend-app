@@ -16,7 +16,6 @@ function AnonRoute(props) {
     /> : <Redirect to= '/private' />}
     </>
      
-    
   )
 }
 export default withAuth (AnonRoute)

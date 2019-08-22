@@ -33,7 +33,7 @@ class List extends Component {
             return ( 
               <div key={vivienda._id}>
               <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
-              <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3><img src="https://images.emojiterra.com/google/android-pie/512px/1f447.png" width="40px" heigth="40px"></img></button>
+              <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3></button>
             
               </NavLink>
                 <Card 

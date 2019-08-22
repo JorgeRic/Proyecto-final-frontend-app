@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import withAuth from '../components/withAuth.js'
 
 
@@ -14,7 +13,6 @@ class Signup extends Component {
     event.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
-  console.log(this.props)
     this.props.signup({ username, password })
       .then( (user) => {
         console.log(user)
@@ -32,7 +30,6 @@ class Signup extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { username, password } = this.state;
     return (
       
@@ -45,8 +42,6 @@ class Signup extends Component {
           <button type='submit' value="Signup" className="btn-select-search"><h2>Signup</h2></button>
         </form>
       </div>
-       
-
       
     )
   }

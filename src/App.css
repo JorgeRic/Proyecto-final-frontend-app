@@ -18,8 +18,14 @@ body {
 li{
   list-style-type: none
 }
+/* .logo{
+  height: 100%;
+  width: 100%;
+} */
+
 .logo{
   height: 100%;
+  width: 100px;
 }
 .logo-logout{
     height: 40px;
@@ -46,7 +52,8 @@ li{
 }
 .navbar-private{
 display: flex;
-flex-direction: row
+flex-direction: row;
+margin-bottom: 15px;
 }
 
 .items-navbar-private{
@@ -58,6 +65,21 @@ flex-direction: column
   background-color:#F39C12;
   display: flex;
   flex: center;
+  margin-top: 15px;
+  height: 100%
+}
+.agradecimientos{
+  display: flex;
+  flex-direction: column
+}
+.texto-card{
+  margin: 10px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+.mail-enviado{
+  margin-top:15px;
+  color: red;
 }
 .slogan{
   font-family: monospace;
@@ -95,6 +117,9 @@ flex-direction: column
   margin: 25px;
   font-size: 1.5em
 }
+.nombre-password{
+  color:#F39C12;
+}
 
 .btn-private{
   border: #F39C12 1px solid;
@@ -105,9 +130,9 @@ flex-direction: column
   width: 50%;
   text-align: center;
   margin: 12px auto;
-  display: flex;
-/* color: white; */
   text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-home{
@@ -119,10 +144,11 @@ box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 width: 50%;
 text-align: center;
 margin: 0 auto;
-display: flex;
 text-decoration: none;
 margin-top: 75px;
 margin-bottom: 75px;
+display: flex;
+justify-content: center;
 }
 
 .btn-recibir-inform{
@@ -130,14 +156,14 @@ border: #F39C12 1px solid;
 background-color: #F39C12;
 padding: 20px;
 border-radius: 20px;
-box-shadow: -5px 6px 20px;
+box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 width: 50%;
 text-align: center;
 margin: 0 auto;
 display: flex;
-
 text-decoration: none;
 margin-bottom: 25px;
+justify-content: center;
 }
 
 .select-search{
@@ -149,10 +175,11 @@ margin-bottom: 25px;
   width: 50%;
   text-align: center;
   margin: 0 auto;
-  display: flex;
   margin-top: 5px;
   font-size: 1em;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 .select-creacion{
@@ -160,7 +187,7 @@ margin-bottom: 25px;
   background-color: #F39C12;
   padding: 11px;
   border-radius: 20px;
-  box-shadow: -5px 6px 20px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
   width: 70%;
   text-align: center;
   margin: 15px auto;
@@ -168,6 +195,8 @@ margin-bottom: 25px;
   margin-top: 5px;
   font-size: 1em;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-select-search{
@@ -180,9 +209,9 @@ margin-bottom: 25px;
   display: flex;
   margin: 25px auto;
   margin-top: 25px;
-  display: flex;
   text-align: center;
   text-decoration: none;
+  justify-content: center;
 }
 
 .btn-select-delete{
@@ -195,9 +224,9 @@ margin-bottom: 25px;
   display: flex;
   margin: 25px auto;
   margin-top: 25px;
-  display: flex;
   text-align: center;
   text-decoration: none;
+  justify-content: center;
 }
 .margenes-creacion-vivienda{
   margin-top: 10px;
@@ -215,6 +244,14 @@ margin-bottom: 25px;
   margin: 15px;
   font-size:1em;
 }
+img{
+  height: 300px;
+  width: 100%;
+}
+.prohibido{
+  width: 40px;
+  height: 40px;;
+}
 .centrar-textos{
   text-align: center;
   margin-top: 10px;
@@ -231,14 +268,14 @@ margin-bottom: 25px;
   background-color: #F39C12;
   padding: 20px;
   border-radius: 20px;
-
   box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
   width: 80%;
+  height: 40px;
   display: flex;
+  justify-content: center;
   margin: 10px auto;
   margin-top: 25px;
   text-decoration: none;
-
 }
 
 .cuadro-login{
@@ -279,14 +316,25 @@ margin-bottom: 25px;
 }
 .container-foto{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
+  /* overflow: hidden; */
+  /* width: 100%; */
+  height: auto
 }
+
+/* display: flex;
+flex-direction: column;
+
+align-items: center;
+
+height: auto; */
+
+
+
 .foto{
-  height: 100%;
+  height: 300px;
   width: auto;
 }
 .card{

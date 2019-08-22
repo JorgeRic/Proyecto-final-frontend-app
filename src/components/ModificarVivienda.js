@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
@@ -65,14 +64,14 @@ class ModificarVivienda extends Component {
 
   
     render() {
-      const {titulo, imagenes, tipo, precio, numHab, numAseos, redirect, referencia, descripcion,viviendas} = this.state
+      const { redirect, viviendas } = this.state
       
       return (
         <div>
         
           <Link to='/searchreferencia' ><button className="btn-select-search"><h2>Buscar por numero de referencia</h2></button></Link>
           <p>Numero de viviendas en cartera: {viviendas.length}</p>
-          {/* <Link to='/searchreferencia'><button>Buscar por referencia</button></Link> */}
+
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return (
               <ViviendaForm

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import viviendaBackendService from '../services/viv-backend-service'
+// import withAuth from './withAuth.js'
+// import {Redirect} from 'react-router-dom'
+// import FileComponent from './FileComponent'
 
 
 export default class ViviendaForm extends Component {
@@ -191,8 +194,22 @@ export default class ViviendaForm extends Component {
                name= "mailPropietario" 
                ></input>
 
+              {/* <label htmlFor="lat" className="datos-creacion">Latitud</label>
+              <input type="text" 
+              id="lat" className="cuadro-creacion" 
+              placeholder="" 
+              onChange={this.handleOnChange } 
+              name= "lat" 
+              value={lat} ></input>
 
-  
+              <label htmlFor="long" className="datos-creacion">Longitud</label>
+             <input type="text" 
+             id="long" className="cuadro-creacion" 
+             placeholder="" 
+             onChange={this.handleOnChange } 
+             name= "long" 
+             value={long} ></input> */}
+
                 <button type='submit' className="btn-select-search"><h2>Modificar</h2></button>
               </form>
       </div>

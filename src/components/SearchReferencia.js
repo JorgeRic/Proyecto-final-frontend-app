@@ -63,9 +63,7 @@ class SearchReferencia extends Component {
  
        {viviendas.data ? viviendas.data.map((vivienda)=>{
             return (
-              
-              
-              
+                
           <PrivateCard   
             clase={vivienda.clase}
             titulo={vivienda.titulo} 
@@ -87,7 +85,6 @@ class SearchReferencia extends Component {
             onclick={this.handleClick}
           />
 
-          
           )
         }) : <p></p>
         }
