@@ -148,20 +148,22 @@ class SearchVivienda extends Component {
       </form>
 
 {viviendas.data ? viviendas.data.map((vivienda)=>{
-  return ( <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
-
+  return ( 
+    <div key={vivienda._id}>
+  <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
+  <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3></button>
+  </NavLink>
   <Card   
     vivienda={vivienda}
     onclick={this.handleClick}
     />
 
-</NavLink>
 
+     </div>
 )
 }) : <p></p>
 }
-
-     </div>
+</div>
    )
  }
 }
