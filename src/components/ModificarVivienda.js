@@ -8,34 +8,9 @@ import { Link } from 'react-router-dom';
 
 class ModificarVivienda extends Component {
   state = {
-    viviendas:[]
+    viviendas:[],
+    redirect: false,
   }
-
-  handelSubmit= (event) => {
-    const {titulo, tipo, imagenes, precio, numHab, numAseos, referencia, descripcion, ciudad, direccion, metros, piscina, jardin,numGarajes, nombrePropietario, mailPropietario, telefonoPropietario} = this.state
-    event.preventDefault();
-    viviendaBackendService.updateOneVivienda({
-    titulo,
-    imagenes,
-    tipo,
-    ciudad,
-    direccion,
-    metros,
-    precio,
-    piscina,
-    jardin,
-    numHab,
-    numAseos,
-    numGarajes,
-    referencia,
-    descripcion,
-    nombrePropietario,
-    telefonoPropietario,
-    mailPropietario
-
-    })
-    .then(()=>{})
-   }
    
   handleUpdate = (event)=> {
     const {name,value} = event.target;
@@ -62,9 +37,16 @@ class ModificarVivienda extends Component {
     })
   }
 
+  onSuccessfulSubmit = () => {
+    this.setState({
+        redirect: true,
+      })
+  }
+
   
     render() {
       const { redirect, viviendas } = this.state
+      console.log(redirect, this.state.redirect);
       
       return (
         <div>
@@ -79,11 +61,13 @@ class ModificarVivienda extends Component {
                vivienda={vivienda}
                refreshData={this.getFreshData}
                handelSubmit={this.handelSubmit}
+               onSuccessfulSubmit={this.onSuccessfulSubmit}
               />
-          )
-        }) : <p>loading....</p>
-      }
+            )
+          }) : <p>loading....</p>}
+          
           {redirect ? <Redirect to = '/privatelist'/> : null}
+         
         </div>
       )
     }

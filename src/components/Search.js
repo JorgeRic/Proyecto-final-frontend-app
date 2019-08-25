@@ -71,7 +71,7 @@ class SearchVivienda extends Component {
           
           <select name="clase" className="select-search" onChange={this.handleChange } value={clase} id="clase">
             <option value=''>Venta o alquiler</option>
-            <option value='ventaVenta o alquiler'>Venta</option>
+            <option value='venta'>Venta</option>
             <option value='alquiler'>Alquiler</option>
           </select>
 
@@ -99,10 +99,10 @@ class SearchVivienda extends Component {
             <option value=''>Precio</option>
             <option value='100000'>hasta 100000</option>
             <option value='200000'>hasta 200000</option>
-            <option value='100000'>hasta 300000</option>
-            <option value='200000'>hasta 400000</option>
-            <option value='100000'>hasta 500000</option>
-            <option value='200000'>hasta 600000</option>
+            <option value='300000'>hasta 300000</option>
+            <option value='400000'>hasta 400000</option>
+            <option value='500000'>hasta 500000</option>
+            <option value='600000'>hasta 600000</option>
           </select>
 
 
@@ -124,7 +124,7 @@ class SearchVivienda extends Component {
 
           <select name="numGarajes" className="select-search" onChange={this.handleChange } value={numGarajes} id="numGarajes">
             <option value=''>Numero garajes</option>
-            <option value='0'>1</option>
+            <option value='0'>0</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
           </select>

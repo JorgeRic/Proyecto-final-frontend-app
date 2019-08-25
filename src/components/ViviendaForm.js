@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import viviendaBackendService from '../services/viv-backend-service'
 // import withAuth from './withAuth.js'
-// import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 // import FileComponent from './FileComponent'
 
 
@@ -25,7 +25,10 @@ export default class ViviendaForm extends Component {
     event.preventDefault();
 
     viviendaBackendService.updateOneVivienda( vivienda._id, vivienda)
-    .then(()=> this.props.refreshData())
+    .then(()=> {
+      this.props.refreshData();
+      this.props.onSuccessfulSubmit();
+    })
    }
 
   render() {
@@ -194,23 +197,24 @@ export default class ViviendaForm extends Component {
                name= "mailPropietario" 
                ></input>
 
-              {/* <label htmlFor="lat" className="datos-creacion">Latitud</label>
+              <label htmlFor="lat" className="datos-creacion">Latitud</label>
               <input type="text" 
               id="lat" className="cuadro-creacion" 
               placeholder="" 
-              onChange={this.handleOnChange } 
+              onChange={this.handleUpdate } 
               name= "lat" 
-              value={lat} ></input>
+              value={vivienda.lat} ></input>
 
               <label htmlFor="long" className="datos-creacion">Longitud</label>
              <input type="text" 
              id="long" className="cuadro-creacion" 
              placeholder="" 
-             onChange={this.handleOnChange } 
+             onChange={this.handleUpdate } 
              name= "long" 
-             value={long} ></input> */}
+             value={vivienda.long} ></input>
 
                 <button type='submit' className="btn-select-search"><h2>Modificar</h2></button>
+               {/* <Redirect to = '/privatelist'/> */}
               </form>
       </div>
     )
