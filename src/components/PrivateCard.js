@@ -4,34 +4,41 @@ export default function PrivateCard(props) {
   const { mostrarUnaPhoto, imagenes, titulo, nombrePropietario, telefonoPropietario, mailPropietario, clase, tipo, precio, ciudad, direccion, metros, numHab, numAseos, numGarajes, piscina, jardin, referencia, descripcion} = props;
   return (
     <div className="card">
+      <div className="card-header text-center">
         <h3>{titulo}</h3>
-        <div className="container-foto">
-        {
-        mostrarUnaPhoto 
-          ? (<img className="foto" src={imagenes[0]}/>)
-          : imagenes
-            ? imagenes.map((img) =>  (<img key={img} src={img}/>))
-            : null
-         }
+      </div>
+      <div className="card-body">
+        <div className="container-fluid">
+          {
+          mostrarUnaPhoto 
+            ? (<img className="w-80 img-fluid" src={imagenes[0]}/>)
+            : imagenes
+              ? imagenes.map((img) =>  (<img key={img}  className="img-fluid w-80 mt-2" src={img}/>))
+              : null
+          }
         </div>
+
          <div className="texto-card">
               <p>Vivienda en {clase}</p>
-              <p>Tipo de vivienda: {tipo}</p>
-              <h3>Precio: {precio} euros</h3>
+              <p>Tipo Vivienda: {tipo}</p>
+              <h5>Precio: {precio} euros</h5>
               <p>Ciudad: {ciudad}</p>
-              <p>Direccion de la vivienda: {direccion}</p>
-              <p>metros cuadrados: {metros}</p>
-              <p>Numero de habitaciones: {numHab}</p>
-              <p>Numero de baños: {numAseos}</p>
-              <p>Numero de garajes:{numGarajes}</p>
+              <p>Direccion Vivienda: {direccion}</p>
+              <p>metros Cuadrados: {metros}</p>
+              <p>Nº Habitaciones: {numHab}</p>
+              <p>Nº Baños: {numAseos}</p>
+              <p>Nº Garajes:{numGarajes}</p>
               <p>Piscina: {piscina}</p>
               <p>Jardin: {jardin}</p>
-              <h4>Numero de referencia: {referencia}</h4>
-              <p>Descripcion de viviendas: {descripcion}</p>
-              <p>Nombre del propietario: {nombrePropietario}</p>
-              <p>Telefono del propietario: {telefonoPropietario}</p>
-              <p>Mail del propietario: {mailPropietario}</p>
+              <h5>Nº Referencia: {referencia}</h5>
+              <div className="border p-1">
+                <p>Descripcion vivienda:<br></br> {descripcion}</p>
+              </div>
+              <p>Nombre propietario: {nombrePropietario}</p>
+              <p>Telefono propietario: {telefonoPropietario}</p>
+              <p>Mail propietario: {mailPropietario}</p>
          </div>
+      </div>
     </div>
       )
     }

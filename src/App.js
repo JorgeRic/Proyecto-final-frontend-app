@@ -1,32 +1,30 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-// import 'milligram';
+import 'mapbox-gl/dist/mapbox-gl.css'
 import firebase from 'firebase'
 
 import Navbar from './components/NavBar.js';
 import Footer from './components/Footer'
-import Private from './pages/Private';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
 import AuthProvider from './context/AuthContext.js'
 import PrivateRoute from './components/PrivateRoute'
 import PrivateList from './components/PrivateList'
 import AnonRoute from './components/AnonRoute'
 import Search from './components/Search'
 import SearchReferencia from './components/SearchReferencia'
-
-
 import CrearViviendas from './components/CrearViviendas';
 import EliminarVivienda from './components/EliminarVivienda'
 import ModificarVivienda from './components/ModificarVivienda'
 import RecibirInformacion from './components/RecicibirInformacion'
 
+import Private from './pages/Private';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import NotFound from './pages/NotFound'
 import List from './pages/List'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
-import 'mapbox-gl/dist/mapbox-gl.css'
+
 
 const config = {
 apiKey: "AIzaSyDeRbk1dsAHiQyr1T1FRhk1d317hzWaAKc",
@@ -42,8 +40,6 @@ class App extends Component {
       <Router>
         <AuthProvider>
         <div className="container">
-        
-          
           <Navbar />
           <section className="main-wrapper">
           <Switch>
@@ -59,17 +55,13 @@ class App extends Component {
             <Route path = "/list"  component={List} />
             <Route path = "/detail/:id"  component={Detail} />
             <Route path = "/recibirinformacion" component={RecibirInformacion} />
-            
-            <Route path="/search" component={Search} />
-            
+            <Route path="/search" component={Search} />       
             <Route component={NotFound} />
           </Switch>
           </section>
           <Footer />
         </div>
         </AuthProvider>
-       
-       
       </Router>
     )
   }

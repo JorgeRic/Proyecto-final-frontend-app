@@ -57,7 +57,7 @@ class CrearVivienda extends Component {
       long
     })
     .then(() => {
-      debugger;
+      // debugger;
       this.setState({
         redirect: true,
       })
@@ -70,7 +70,7 @@ class CrearVivienda extends Component {
     this.setState({
       [name]: value,
     });
-    console.log(this.state);
+    // console.log(this.state);
     window.state = this.state;
   };
 
@@ -85,14 +85,14 @@ class CrearVivienda extends Component {
        
         <form onSubmit ={this.handelSubmit}>
           <label htmlFor="clase" className="datos-creacion">Venta o alquiler</label>
-          <select name="clase" className="select-creacion" onChange={this.handleOnChange } value={clase} id="clase">
+          <select name="clase" className="border-warning form-control letra" onChange={this.handleOnChange } value={clase} id="clase">
             <option value=''>Elegir</option>
             <option value='venta'>Venta</option>
             <option value='alquiler'>Alquiler</option>
           </select>
 
           <label htmlFor="tipo" className="datos-creacion">Tipo de vivienda</label>
-          <select name='tipo' className="select-creacion" onChange={this.handleOnChange } value={tipo} id="tipo">
+          <select name='tipo' className="border-warning form-control letra" onChange={this.handleOnChange } value={tipo} id="tipo">
             <option value=''>Elegir</option>
             <option value='piso'>Piso</option>
             <option value='chalet'>Chalet</option>
@@ -103,7 +103,7 @@ class CrearVivienda extends Component {
           </select>
 
           <label htmlFor="titulo" className="datos-creacion">Titulo de la vivienda</label>
-          <input type="text" id="titulo" className="cuadro-creacion" placeholder="" value={titulo} name= "titulo" onChange={this.handleOnChange }></input>
+          <input type="text" id="titulo" className="mr-5 p-3 border-warning form-control letra" placeholder="" value={titulo} name= "titulo" onChange={this.handleOnChange }></input>
           
        
           {/* <label style={{backgroundColor: 'steelblue', color: 'white', padding: "10px", borderRadius: 4, pointer: 'cursor'}}> */}
@@ -113,11 +113,11 @@ class CrearVivienda extends Component {
           
          
           <label htmlFor="precio" className="datos-creacion">Precio</label>
-          <input type="number" id="precio" className="cuadro-creacion" placeholder="" value={precio} name= "precio" onChange={this.handleOnChange }></input>
+          <input type="number" id="precio" className="mr-5 p-3 border-warning form-control letra" placeholder="" value={precio} name= "precio" onChange={this.handleOnChange }></input>
          
       
           <label htmlFor="ciudad" className="datos-creacion">Ciudad</label>
-          <select name="ciudad"  className="select-creacion" onChange={this.handleOnChange } value={ciudad} id="ciudad">
+          <select name="ciudad"  className="border-warning form-control letra" onChange={this.handleOnChange } value={ciudad} id="ciudad">
             <option value=''>Elegir</option>
             <option value='Alicante'>Alicante</option>
             <option value='San Vicente'>San Vicente</option>
@@ -128,57 +128,58 @@ class CrearVivienda extends Component {
           </select>
 
           <label htmlFor="direccion"className="datos-creacion" >Direccion de la vivienda</label>
-          <input type="text" id="direccion" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "direccion" value={direccion} ></input>
+          <input type="text" id="direccion" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "direccion" value={direccion} ></input>
         
           <label htmlFor="metros" className="datos-creacion" >Metros de la vivienda</label>
-          <input type="number" id="metros" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "metros" value={metros} ></input>
+          <input type="number" id="metros" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "metros" value={metros} ></input>
        
           <label htmlFor="numGarajes" className="datos-creacion">Numero de garajes</label>
-          <input type="number" id="numGarajes" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "numGarajes" value={numGarajes} ></input>
+          <input type="number" id="numGarajes" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "numGarajes" value={numGarajes} ></input>
 
        
           <label htmlFor="numHab" className="datos-creacion">Numero de habitaciones</label>
-          <input type="number" id="numHab" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "numHab" value={numHab} ></input>
+          <input type="number" id="numHab" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "numHab" value={numHab} ></input>
        
           <label htmlFor="referencia" className="datos-creacion">Numero de referencia</label>
-          <input type="number" id="referencia"  className="cuadro-creacion"placeholder="" onChange={this.handleOnChange } name= "referencia" value={referencia} ></input>
+          <input type="number" id="referencia"  className="mr-5 p-3 border-warning form-control letra"placeholder="" onChange={this.handleOnChange } name= "referencia" value={referencia} ></input>
        
           <label htmlFor="numAseos" className="datos-creacion">Baños</label>
-          <input type="number" id="numAseos" className="cuadro-creacion" placeholder="0" onChange={this.handleOnChange } name= "numAseos" value={numAseos} ></input>
+          <input type="number" id="numAseos" className="mr-5 p-3 border-warning form-control letra" placeholder="0" onChange={this.handleOnChange } name= "numAseos" value={numAseos} ></input>
 
           <label htmlFor="jardin"className="datos-creacion" >Jardin</label>
-          <select name="jardin" className="select-creacion" onChange={this.handleOnChange } value={jardin} id="jardin">
+          <select name="jardin" className="border-warning form-control letra" onChange={this.handleOnChange } value={jardin} id="jardin">
             <option value=''>Elegir</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
 
           <label htmlFor="piscina" className="datos-creacion">Piscina</label>
-          <select name="piscina" className="select-creacion" onChange={this.handleOnChange } value={piscina} id="piscina">
-           <option value=''>Elegir</option>
+          <select name="piscina" className="border-warning form-control letra" onChange={this.handleOnChange } value={piscina} id="piscina">
+            <option value=''>Elegir</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
           
           <label htmlFor="descripcion" className="datos-creacion">Descripcion de la vivienda</label>
-          <input type="text" id="descripcion" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "descripcion" value={descripcion} ></input>
+          <textarea type="text" id="descripcion" className="mr-5 p-3 border-warning form-control letra" cols="100" rows ="5" placeholder="" onChange={this.handleOnChange } name= "descripcion" value={descripcion} ></textarea>
          
           <label htmlFor="nombrePropietario" className="datos-creacion" >Nombre del propietario</label>
-          <input type="text" id="nombrePropietario" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "nombrePropietario" value={nombrePropietario} ></input>
+          <input type="text" id="nombrePropietario" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "nombrePropietario" value={nombrePropietario} ></input>
         
           <label htmlFor="telefonoPropietario" className="datos-creacion" >Telefono del Propietario</label>
-          <input type="text" id="telefonoPropietario" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "telefonoPropietario" value={telefonoPropietario} ></input>
+          <input type="text" id="telefonoPropietario" className="mr-5 p-3 border-warning form-control letra" cols="60" rows ="10"  placeholder="" onChange={this.handleOnChange } name= "telefonoPropietario" value={telefonoPropietario} ></input>
         
           <label htmlFor="mailPropietario"className="datos-creacion" >Mail del propietario</label>
-          <input type="email" id="mailPropietario" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "mailPropietario" value={mailPropietario} ></input>
+          <input type="email" id="mailPropietario" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "mailPropietario" value={mailPropietario} ></input>
 
           <label htmlFor="lat" className="datos-creacion">Latitud</label>
-          <input type="text" id="lat" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "lat" value={lat} ></input>
+          <input type="text" id="lat" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "lat" value={lat} ></input>
 
           <label htmlFor="long" className="datos-creacion">Longitud</label>
-          <input type="text" id="long" className="cuadro-creacion" placeholder="" onChange={this.handleOnChange } name= "long" value={long} ></input>
-
-          <button type='submit' className="btn-select-search"><h2>Añadir</h2></button>
+          <input type="text" id="long" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "long" value={long} ></input>
+          <div className="container text-center">
+           <button type='submit' className=" btn btn-outline-warning btn-small mt-2 mb-2 col-6"><h3>Añadir</h3></button>
+          </div>
         </form>
         {redirect ? <Redirect to = '/privatelist'/> : null}
       </div>

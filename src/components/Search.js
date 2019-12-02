@@ -56,26 +56,25 @@ class SearchVivienda extends Component {
 
   handleChange = (event) => {  
     const {name, value} = event.target;
-    console.log(value,'ferg')
+    // console.log(value,'ferg')
     this.setState({[name]: value});
   };
 
  render() {
-   const{referencia,clase, tipo, ciudad, piscina, jardin, precio, metros, numHab, numAseos,numGarajes, viviendas} = this.state
-   console.log(this.state.viviendas.data)
+   const{clase, tipo, ciudad, piscina, jardin, precio, numHab, numAseos,numGarajes, viviendas} = this.state
+  //  console.log(this.state.viviendas.data)
    
    return (
      <div>
-
         <form onSubmit={this.handleFormSubmit}>
-          
-          <select name="clase" className="select-search" onChange={this.handleChange } value={clase} id="clase">
+          <div className="row">
+          <select name="clase" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={clase} id="clase">
             <option value=''>Venta o alquiler</option>
             <option value='venta'>Venta</option>
             <option value='alquiler'>Alquiler</option>
           </select>
 
-          <select name='tipo'  className="select-search" onChange={this.handleChange } value={tipo} id="tipo">
+          <select name='tipo'  className="select-search col-10 col-sm-3" onChange={this.handleChange } value={tipo} id="tipo">
             <option value=''>Tipo de vivienda</option>
             <option value='piso'>Piso</option>
             <option value='chalet'>Chalet</option>
@@ -85,7 +84,7 @@ class SearchVivienda extends Component {
             <option value='atico'>Atico</option>
           </select>
 
-          <select name="ciudad" className="select-search" onChange={this.handleChange } value={ciudad} id="ciudad">
+          <select name="ciudad" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={ciudad} id="ciudad">
             <option value=''>Ciudad</option>
             <option value='Alicante'>Alicante</option>
             <option value='San Vicente'>San Vicente</option>
@@ -94,8 +93,9 @@ class SearchVivienda extends Component {
             <option value='El Altet'>El Altet</option>
             <option value='Agost'>Agost</option>
           </select>
- 
-          <select name="precio" className="select-search" onChange={this.handleChange } value={precio} id="precio">
+          </div>
+          <div className="row">
+          <select name="precio" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={precio} id="precio">
             <option value=''>Precio</option>
             <option value='100000'>hasta 100000</option>
             <option value='200000'>hasta 200000</option>
@@ -106,7 +106,7 @@ class SearchVivienda extends Component {
           </select>
 
 
-          <select name="numHab" className="select-search" onChange={this.handleChange } value={numHab} id="numHab">
+          <select name="numHab" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={numHab} id="numHab">
             <option value=''>Numero habitaciones</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
@@ -115,14 +115,15 @@ class SearchVivienda extends Component {
           </select>
 
 
-          <select name="numAseos" className="select-search" onChange={this.handleChange } value={numAseos} id="numAseos">
+          <select name="numAseos" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={numAseos} id="numAseos">
             <option value=''>Numero de baños</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
           </select>
-
-          <select name="numGarajes" className="select-search" onChange={this.handleChange } value={numGarajes} id="numGarajes">
+          </div>
+          <div className="row">
+          <select name="numGarajes" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={numGarajes} id="numGarajes">
             <option value=''>Numero garajes</option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -130,19 +131,21 @@ class SearchVivienda extends Component {
           </select>
        
 
-          <select name="jardin" className="select-search" onChange={this.handleChange } value={jardin} id="jardin">
+          <select name="jardin" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={jardin} id="jardin">
             <option value=''>Jardín?</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
 
-          <select name="piscina" className="select-search" onChange={this.handleChange } value={piscina} id="piscina">
+          <select name="piscina" className="select-search col-10 col-sm-3" onChange={this.handleChange } value={piscina} id="piscina">
            <option value=''>Piscina?</option>
             <option value='Si'>Si</option>
             <option value='No'>No</option>
           </select>
-
-          <button className="btn-select-search" type="submit" ><h2>Search</h2></button>
+          </div>
+          <div className="text-center">
+            <button className="btn btn-outline-warning mt-4 mb-2 col-8" type="submit" ><h3>Search</h3></button>
+          </div>
        
          
       </form>
@@ -150,9 +153,11 @@ class SearchVivienda extends Component {
 {viviendas.data ? viviendas.data.map((vivienda)=>{
   return ( 
     <div key={vivienda._id}>
-  <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
-  <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3></button>
-  </NavLink>
+    <div className="text-center">
+      <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
+      <button className="btn btn-outline-warning mt-2 mb-2 col-8"><h3>Datos Vivienda:</h3></button>
+      </NavLink>
+    </div>
   <Card   
     vivienda={vivienda}
     onclick={this.handleClick}

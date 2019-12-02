@@ -21,18 +21,22 @@ class PrivateList extends Component {
 
     render() {
       const {viviendas,} = this.state
-      console.log(viviendas )
+      // console.log(viviendas )
       return (
         <div>
           <h1>LISTA DE VIVIENDAS</h1>
           <h2 className="cartera-viv">Numero de viviendas en cartera: {viviendas.length}</h2>
-          <NavLink to='/searchreferencia' activeClassName=""><button className="btn-select-detail"><h3>Buscar por numero de referencia</h3></button></NavLink>
+          <div className="container text-center">
+            <NavLink to='/searchreferencia' activeClassName=""><button className="btn btn-outline-dark mt-2 mb-2 col-8"><h4>Buscar Referencia</h4></button></NavLink>
+          </div>
             {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return ( 
               <div key={vivienda._id}>
-              <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
-              <button className="btn-select-detail"><h3>Ver vivienda en detalle:</h3></button>
-              </NavLink>
+              <div className="container text-center">
+                <NavLink key={vivienda._id} to={`/detail/${vivienda._id}`} activeClassName="logo-detalle">
+                <button className="btn btn-outline-warning mt-2 mb-2 col-6"><h5>Datos Vivienda:</h5></button>
+                </NavLink>
+              </div>
               <PrivateCard   
                 mostrarUnaPhoto={true}
                 titulo={vivienda.titulo} 

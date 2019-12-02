@@ -87,7 +87,8 @@ Trello
 https://trello.com/b/GKQZv5R5/cityzen
 
 ## GitHub
-La dirección URL de su repositorio y de su proyecto desplegado
+https://github.com/JorgeRic/basic-backend-app
+https://github.com/JorgeRic/basic-frontend-app
 
 ## Wifrems
 figma

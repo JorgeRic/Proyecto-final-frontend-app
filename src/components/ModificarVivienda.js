@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
-import {Redirect} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import ViviendaForm from "./ViviendaForm"
-import { Link } from 'react-router-dom';
-
 
 class ModificarVivienda extends Component {
   state = {
@@ -14,14 +12,10 @@ class ModificarVivienda extends Component {
    
   handleUpdate = (event)=> {
     const {name,value} = event.target;
-
     this.setState({
       [name]: value,
-    })
-    console.log(this.state);
-    
+    })  
   }
-
 
   componentDidMount(){
     this.getFreshData()
@@ -30,42 +24,39 @@ class ModificarVivienda extends Component {
   getFreshData = () => {
     viviendaBackendService.getAllViviendas()
       .then(response => {
-        console.log("AQUI", response.data.listOfViv)
-        this.setState({
-        viviendas: response.data.listOfViv
+      this.setState({
+      viviendas: response.data.listOfViv
       })
     })
   }
 
   onSuccessfulSubmit = () => {
     this.setState({
-        redirect: true,
-      })
+      redirect: true,
+    })
   }
 
-  
     render() {
       const { redirect, viviendas } = this.state
-      console.log(redirect, this.state.redirect);
       
       return (
         <div>
-        
-          <Link to='/searchreferencia' ><button className="btn-select-search"><h2>Buscar por numero de referencia</h2></button></Link>
-          <p>Numero de viviendas en cartera: {viviendas.length}</p>
+          <div className="container text-center">
+            <Link to='/searchreferencia' ><button className="btn btn-outline-dark mt-2 mb-2 col-8"><h4>Buscar Referencia</h4></button></Link>
+          </div>
+          <p>* Numero de viviendas en cartera: {viviendas.length}</p>
 
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return (
               <ViviendaForm
-               key={vivienda._id}
-               vivienda={vivienda}
-               refreshData={this.getFreshData}
-               handelSubmit={this.handelSubmit}
-               onSuccessfulSubmit={this.onSuccessfulSubmit}
+                key={vivienda._id}
+                vivienda={vivienda}
+                refreshData={this.getFreshData}
+                handelSubmit={this.handelSubmit}
+                onSuccessfulSubmit={this.onSuccessfulSubmit}
               />
             )
           }) : <p>loading....</p>}
-          
           {redirect ? <Redirect to = '/privatelist'/> : null}
          
         </div>

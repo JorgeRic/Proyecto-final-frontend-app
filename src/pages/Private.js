@@ -7,16 +7,19 @@ class Private extends Component {
   render() {
     
     return (
-      <div className="main-private">
+      // <div className="main-private">
+       <div className="container text-center">
+         <div className="row btn-group-vertical">
+            <NavLink to='/signup' activeClassName=""><button className="btn btn-outline-dark  mt-5 mb-4" ><h3>Crear nuevo usuario</h3></button></NavLink>
+            <NavLink to='/privatelist' activeClassName=""><button className="btn btn-outline-dark  mt-4 mb-4" ><h3>Lista de viviendas</h3></button></NavLink>
+            <NavLink to='/crearvivienda' activeClassName="" ><button className="btn btn-outline-dark  mt-4 mb-4" ><h3>Crear nueva vivienda</h3></button></NavLink>
+            <NavLink to='/searchreferencia' activeClassName="" ><button className="btn btn-outline-dark  mt-4 mb-4" ><h3>Buscar por referencia</h3></button></NavLink>
+            <NavLink to='/modificarvivienda' activeClassName=""><button className="btn btn-outline-dark  mt-4 mb-4" ><h3>Modificar vivienda</h3></button></NavLink>
+            <NavLink to='/eliminarvivienda' activeClassName=""><button className="btn btn-outline-dark  mt-4 mb-5" ><h3>Eliminar vivienda</h3></button></NavLink>
+         </div>
+       </div>
        
-        <NavLink to='/signup' activeClassName=""><button className="btn-private" ><h3>Crear nuevo usuario</h3></button></NavLink>
-        <NavLink to='/privatelist' activeClassName=""><button className="btn-private" ><h3>Lista de viviendas</h3></button></NavLink>
-        <NavLink to='/crearvivienda' activeClassName="" ><button className="btn-private" ><h3>Crear nueva vivienda</h3></button></NavLink>
-        <NavLink to='/searchreferencia' activeClassName="" ><button className="btn-private" ><h3>Buscar por referencia</h3></button></NavLink>
-        <NavLink to='/modificarvivienda' activeClassName=""><button className="btn-private" ><h3>Modificar vivienda</h3></button></NavLink>
-        <NavLink to='/eliminarvivienda' activeClassName=""><button className="btn-private" ><h3>Eliminar vivienda</h3></button></NavLink>
-       
-      </div>
+      // </div>
     )
   }
 }

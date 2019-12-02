@@ -56,10 +56,10 @@ class SearchReferencia extends Component {
 
  render() {
    const{referencia,viviendas} = this.state
-   console.log(this.state.viviendas.data)
+  //  console.log(this.state.viviendas.data)
    
    return (
-     <div class="main-login">
+     <div className="main-login">
  
        {viviendas.data ? viviendas.data.map((vivienda)=>{
             return (
@@ -88,13 +88,13 @@ class SearchReferencia extends Component {
           )
         }) : <p></p>
         }
-          {/* <NavLink activeClassName="" key={vivienda._id} to={`/detail/${vivienda._id}`}>
-          </NavLink > */}
+
         <form onSubmit={this.handleFormSubmit}>
           <label htmlFor='referencia' className="datos-login"><h2>Referencia:</h2></label>
-          <input id='referencia' className="cuadro-login" type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
-
-          <button type ="submit" className="btn-select-search"><h2>Search</h2></button>
+          <input id='referencia' className="cuadro-login mb-5" type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
+          <div className="text-center">
+            <button type ="submit" className="btn btn-outline-warning mt-2 mb-5 col-8"><h2>Search</h2></button>
+          </div>
          
       </form>
      </div>

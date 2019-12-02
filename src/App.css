@@ -7,14 +7,10 @@ body {
 *{
   margin:0;
   padding:0;
+  /* width:100%; */
   font-family:'Tiempos Headline Light';
 }
-.list-navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
+
 li{
   list-style-type: none
 }
@@ -23,16 +19,12 @@ li{
   width: 100%;
 } */
 
-.logo{
-  height: 100%;
-  width: 100px;
-}
 .logo-logout{
-    height: 40px;
-    width: 40px;
-    border-radius: 25px;
-    float: right;
-    margin-top: 25px
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+  float: right;
+  margin-top: 25px
 }
 
 .logo-staff{
@@ -47,27 +39,8 @@ li{
   
 }
 
-.nav-bar{
-  background-color:#F39C12;
-}
-.navbar-private{
-display: flex;
-flex-direction: row;
-margin-bottom: 15px;
-}
 
-.items-navbar-private{
-  display: flex;
-flex-direction: column
-}
 
-.footer{
-  background-color:#F39C12;
-  display: flex;
-  flex: center;
-  margin-top: 15px;
-  height: 100%
-}
 .agradecimientos{
   display: flex;
   flex-direction: column
@@ -84,7 +57,7 @@ flex-direction: column
 .slogan{
   font-family: monospace;
   background-color: #F39C12;
-
+  
   padding: 2px;
 }
 
@@ -127,43 +100,43 @@ flex-direction: column
   padding: 20px;
   border-radius: 20px;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-  width: 50%;
+  /* width: 50%; */
   text-align: center;
   margin: 12px auto;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .btn-home{
   border: #F39C12 3px solid;
   background-color: #F8F9F9;
-padding: 20px;
-border-radius: 20px;
-box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-width: 50%;
-text-align: center;
-margin: 0 auto;
-text-decoration: none;
-margin-top: 75px;
-margin-bottom: 75px;
-display: flex;
-justify-content: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-recibir-inform{
   border: #F39C12 3px solid;
   background-color: #F8F9F9;
-padding: 20px;
-border-radius: 20px;
-box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-width: 50%;
-text-align: center;
-margin: 0 auto;
-display: flex;
-text-decoration: none;
-margin-bottom: 25px;
-justify-content: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  text-decoration: none;
+  margin-bottom: 25px;
+  justify-content: center;
 }
 
 .select-search{
@@ -244,10 +217,10 @@ justify-content: center;
   margin: 15px;
   font-size:1em;
 }
-img{
+/* img{
   height: 300px;
   width: 100%;
-}
+} */
 .prohibido{
   width: 40px;
   height: 40px;;
@@ -258,9 +231,9 @@ img{
 }
 .subir-imagen{
   background-color:steelblue;
-   color: white;
-   padding: 10px;
-   border-radius: 10px
+  color: white;
+  padding: 10px;
+  border-radius: 10px
 }
 
 .btn-select-detail{
@@ -276,7 +249,7 @@ img{
   margin: 10px auto;
   margin-top: 25px;
   text-decoration: none;
-
+  
 }
 
 .cuadro-login{
@@ -310,7 +283,7 @@ img{
   height: 30px;
   text-align: center;
   font-size: 1em;
-
+  
 }
 .cartera-viv{
   border: #F39C12 4px solid;
@@ -342,18 +315,38 @@ img{
 .parte-informacion{
   width: 100%;
 }
-
 a{
   text-decoration: none;
   font-weight: 2em;
   font-size: 2em;
 }
-.footer{
-  background-color: #F39C12;
-  display: flex;
-  width: 100%;
-  bottom: 0;
-  height: 12vh;
 
+
+.letra{
+  color: black;
+  font-size: 1.5em
 }
 
+.list-navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.color{
+  background-color:#F39C12;
+}
+.navbar-private{
+  display: flex;
+  
+}
+
+.items-navbar-private{
+  display: flex;
+  flex-direction: column
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
+}

@@ -51,6 +51,7 @@ class FileUploadComponent extends Component {
           onUploadError={this.handleUploadError}
           onUploadSuccess={this.handleUploadSuccess}
           onProgress={this.handleProgress}
+          className="btn btn-warning"
         />
       </div>
     );

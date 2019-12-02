@@ -11,7 +11,6 @@ class EliminarVivienda extends Component {
     viviendas: []
   }
 
-
   handleDeleteClick = (id) => {
     viviendaBackendService.deleteOneVivienda(id)
     .then(()=>{
@@ -35,42 +34,40 @@ class EliminarVivienda extends Component {
       })
    }
    
-
-
   render() {
     const {viviendas, redirect} = this.state
  
     return (
      
         <div>
-          <h1 className="centrar-textos">ELIMINAR VIVIENDA</h1>
-          <Link to='/searchreferencia'><button className="btn-select-search"><h2>Buscar por numero de referencia</h2></button></Link>
+          <h3 className="centrar-textos">ELIMINAR VIVIENDA</h3>
+          <div className="text-center">
+            <Link to='/searchreferencia'><button className="btn btn-outline-dark mt-2 mb-2 col-8"><h5>Buscar Referencia</h5></button></Link>
+          </div>
           {viviendas.length > 0 ? viviendas.map((vivienda) => {
             return (
               <article className="cuadro-delete" key = {vivienda._id}>
                <div className="container-delete">
-                <h1>Numero de referencia: {vivienda.referencia}</h1>
+                <h3>Numero Referencia: {vivienda.referencia}</h3>
                 <p>Titulo: {vivienda.titulo}</p>
                 <p>Vivienda en: {vivienda.clase}</p>
                 <p>Tipo de vivienda: {vivienda.tipo}</p>
                 <p>Precio: {vivienda.precio}</p>
                 <p>Ciudad: {vivienda.ciudad}</p>
                </div>
-
-                <button className="btn-select-delete" onClick = {() => {
-                this.handleDeleteClick(vivienda._id)
-                 }}><h2>Eliminar referencia: {vivienda.referencia}</h2></button>
+                <div className="text-center bg-warning">
+                  <button className="btn btn-outline-danger btn-small mt-2 mb-2 col-8" onClick = {() => {
+                  this.handleDeleteClick(vivienda._id)
+                  }}><h4>Eliminar</h4></button>
+                </div>
               </article>
             )
           }) : <p>Loading ...</p>
         }
-        {redirect ? <Redirect to = '/privatelist'/> : null}
-        
+        {redirect ? <Redirect to = '/privatelist'/> : null} 
       </div>
-    
     )
   }
 }
-
 
 export default withAuth(EliminarVivienda);
