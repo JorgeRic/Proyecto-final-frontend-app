@@ -163,7 +163,7 @@ export default class ViviendaForm extends Component {
                 placeholder="modificar datos ..." 
                 />
                 
-                  <h4>Datos de contacto:</h4>
+               <h4 className="mt-4 font-weight-bold">Datos de contacto:</h4>
 
                <label htmlFor="nombrePropietario" className="datos-creacion">Nombre del propietario</label>
                <input type="text" 

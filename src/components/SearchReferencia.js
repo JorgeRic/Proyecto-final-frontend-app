@@ -91,7 +91,7 @@ class SearchReferencia extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           <label htmlFor='referencia' className="datos-login"><h2>Referencia:</h2></label>
-          <input id='referencia' className="cuadro-login mb-5" type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
+          <input id='referencia' className="border-warning form-control letra mt-3 mr-5 " type='number' name='referencia' value={referencia} onChange={this.handleChange}/>
           <div className="text-center">
             <button type ="submit" className="btn btn-outline-warning mt-2 mb-5 col-8"><h2>Search</h2></button>
           </div>
