@@ -2,11 +2,7 @@
 import React, { Component } from 'react'
 import withAuth from './withAuth.js'
 import viviendaBackendService from '../services/viv-backend-service'
-import { NavLink  } from 'react-router-dom'
 import PrivateCard from './PrivateCard'
-
-
-
 
 class SearchReferencia extends Component {
  

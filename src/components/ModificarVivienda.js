@@ -8,6 +8,8 @@ class ModificarVivienda extends Component {
   state = {
     viviendas:[],
     redirect: false,
+    mensaje: 'Datos Modificados',
+    modificado: false
   }
    
   handleUpdate = (event)=> {
@@ -30,34 +32,43 @@ class ModificarVivienda extends Component {
     })
   }
 
-  onSuccessfulSubmit = () => {
+  onSuccessfulSubmit = ()=> {
     this.setState({
-      redirect: true,
+      modificado: true
+    }, () => {
+      setTimeout(()=>{
+        this.setState({
+          redirect: true
+        })
+      }, 3000)
     })
   }
 
     render() {
-      const { redirect, viviendas } = this.state
+      const { redirect, viviendas, modificado, mensaje } = this.state
       
       return (
         <div>
           <div className="container text-center">
             <Link to='/searchreferencia' ><button className="btn btn-outline-dark mt-2 mb-2 col-8"><h4>Buscar Referencia</h4></button></Link>
           </div>
+          { modificado ? <h4 className="mail-enviado bg-success p-4">{mensaje}</h4> : '' }
           <p>* Numero de viviendas en cartera: {viviendas.length}</p>
 
           {viviendas.length > 0 ? viviendas.map((vivienda)=>{
             return (
               <ViviendaForm
-                key={vivienda._id}
-                vivienda={vivienda}
-                refreshData={this.getFreshData}
-                handelSubmit={this.handelSubmit}
-                onSuccessfulSubmit={this.onSuccessfulSubmit}
+              key={vivienda._id}
+              vivienda={vivienda}
+              refreshData={this.getFreshData}
+              handelSubmit={this.handelSubmit}
+              onSuccessfulSubmit={this.onSuccessfulSubmit}
               />
-            )
-          }) : <p>loading....</p>}
+              )
+            }) : <p>loading....</p>}
           {redirect ? <Redirect to = '/privatelist'/> : null}
+
+            { modificado ? <h4 className="mail-enviado bg-success p-4">{mensaje}</h4> : '' }
          
         </div>
       )

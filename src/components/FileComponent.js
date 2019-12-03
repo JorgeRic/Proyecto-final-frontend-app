@@ -38,11 +38,11 @@ class FileUploadComponent extends Component {
   render() {
     const {isUploading, progress, avatarURL} = this.state;
     return (
-      <div >
+      <div className="d-flex flex-column justify-content-start">
         <label className='datos-creacion'>Subir imagen:</label>
         {isUploading && <p>Progress: {progress}</p>}
         {avatarURL && <img src={avatarURL} alt='name'/>}
-        <FileUploader className="center-input"
+        <FileUploader 
           accept="image/*"
           name="image"
           randomizeFilename

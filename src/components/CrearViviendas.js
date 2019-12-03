@@ -29,6 +29,10 @@ class CrearVivienda extends Component {
     lat: '',
     long: '',
     redirect: false,
+
+      mostrar: false,
+      mensaje: 'Nueva Propiedad Añadida'
+    
   };
 
   handelSubmit= (event) => {
@@ -58,8 +62,17 @@ class CrearVivienda extends Component {
     })
     .then(() => {
       // debugger;
+      // this.setState({
+      //   redirect: true,
+      // })
       this.setState({
-        redirect: true,
+        mostrar: true
+      }, () => {
+        setTimeout(()=>{
+          this.setState({
+            redirect: true
+          })
+        }, 3000)
       })
     })
     .catch (error => {console.log(error)})
@@ -74,17 +87,25 @@ class CrearVivienda extends Component {
     window.state = this.state;
   };
 
+  validarForm = () => {
+    const { titulo, referencia, clase } = this.state
+    const noValido = !titulo || !referencia || !clase;
+    return noValido
+  }
+
   onUploadFinished = filename => {
     this.setState({imagenes: this.state.imagenes.concat(filename)});
   };
 
   render() {
-    const {titulo, clase, tipo, precio, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario, lat, long} = this.state
+    const {titulo, clase, tipo, precio, mostrar, mensaje, numHab, numAseos, piscina, jardin, numGarajes, redirect, ciudad, referencia, descripcion,direccion, metros,nombrePropietario,telefonoPropietario, mailPropietario, lat, long} = this.state
+    // console.log(this.state.mensaje)
     return (
       <div className="margenes-creacion-vivienda">
-       
+       { mostrar ? <h4 className="mail-enviado bg-success p-4">{mensaje}</h4> : '' }
         <form onSubmit ={this.handelSubmit}>
           <label htmlFor="clase" className="datos-creacion">Venta o alquiler</label>
+          <p><small>* Campo obligatorio</small></p>
           <select name="clase" className="border-warning form-control letra" onChange={this.handleOnChange } value={clase} id="clase">
             <option value=''>Elegir</option>
             <option value='venta'>Venta</option>
@@ -92,6 +113,7 @@ class CrearVivienda extends Component {
           </select>
 
           <label htmlFor="tipo" className="datos-creacion">Tipo de vivienda</label>
+          <p><small>* Campo obligatorio</small></p>
           <select name='tipo' className="border-warning form-control letra" onChange={this.handleOnChange } value={tipo} id="tipo">
             <option value=''>Elegir</option>
             <option value='piso'>Piso</option>
@@ -103,14 +125,10 @@ class CrearVivienda extends Component {
           </select>
 
           <label htmlFor="titulo" className="datos-creacion">Titulo de la vivienda</label>
+          <p><small>* Campo obligatorio</small></p>
           <input type="text" id="titulo" className="mr-5 p-3 border-warning form-control letra" placeholder="" value={titulo} name= "titulo" onChange={this.handleOnChange }></input>
-          
-       
-          {/* <label style={{backgroundColor: 'steelblue', color: 'white', padding: "10px", borderRadius: 4, pointer: 'cursor'}}> */}
-          {/* Pasamos a 'FileComponent' la funcion 'onUploadFinished' para poder actualizar las urls de imagen en la base de datos. */}
-          <FileComponent id="imagenes" className="datos-creacion"  onUploadFinished={this.onUploadFinished}/>
-          {/* </label> */}
-          
+
+          <FileComponent id="imagenes" className="datos-creacion"  onUploadFinished={this.onUploadFinished}/>        
          
           <label htmlFor="precio" className="datos-creacion">Precio</label>
           <input type="number" id="precio" className="mr-5 p-3 border-warning form-control letra" placeholder="" value={precio} name= "precio" onChange={this.handleOnChange }></input>
@@ -141,6 +159,7 @@ class CrearVivienda extends Component {
           <input type="number" id="numHab" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "numHab" value={numHab} ></input>
        
           <label htmlFor="referencia" className="datos-creacion">Numero de referencia</label>
+          <p><small>* Campo obligatorio</small></p>
           <input type="number" id="referencia"  className="mr-5 p-3 border-warning form-control letra"placeholder="" onChange={this.handleOnChange } name= "referencia" value={referencia} ></input>
        
           <label htmlFor="numAseos" className="datos-creacion">Baños</label>
@@ -178,9 +197,12 @@ class CrearVivienda extends Component {
           <label htmlFor="long" className="datos-creacion">Longitud</label>
           <input type="text" id="long" className="mr-5 p-3 border-warning form-control letra" placeholder="" onChange={this.handleOnChange } name= "long" value={long} ></input>
           <div className="container text-center">
-           <button type='submit' className=" btn btn-outline-warning btn-small mt-2 mb-2 col-6"><h3>Añadir</h3></button>
+            <p><small>*El titulo, el numero de referencia y la clase de vivienda son campos obligatorios</small></p>
+           <button type='submit' disabled={this.validarForm()} className=" btn btn-outline-warning btn-small mt-2 mb-2 col-6"><h3>Añadir</h3></button>
           </div>
         </form>
+        { mostrar ? <h4 className="mail-enviado bg-success p-4">{mensaje}</h4> : '' }
+
         {redirect ? <Redirect to = '/privatelist'/> : null}
       </div>
     )

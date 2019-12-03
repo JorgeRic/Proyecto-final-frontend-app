@@ -15,9 +15,9 @@ function Card(props) {
         <div className="container-fluid">
         {
           mostrarUnaPhoto 
-            ? (<img className="img-fluid w-80" src={vivienda.imagenes[0]}/>)
+            ? (<img className="img-fluid w-80" src={vivienda.imagenes[0]} alt="imagen vivienda"/>)
             : vivienda.imagenes
-              ? vivienda.imagenes.map((img) => (<img className="img-fluid w-80 mt-2" key={img} src={img}/>))
+              ? vivienda.imagenes.map((img) => (<img className="img-fluid w-80 mt-2" key={img} src={img} alt="imagen vivienda"/>))
               : null
         }
           </div>

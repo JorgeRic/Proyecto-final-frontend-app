@@ -24,8 +24,8 @@ class PrivateList extends Component {
       // console.log(viviendas )
       return (
         <div>
-          <h1>LISTA DE VIVIENDAS</h1>
-          <h2 className="cartera-viv">Numero de viviendas en cartera: {viviendas.length}</h2>
+          <h3>LISTA DE VIVIENDAS</h3>
+          <h4 className="cartera-viv">Numero de viviendas en cartera: {viviendas.length}</h4>
           <div className="container text-center">
             <NavLink to='/searchreferencia' activeClassName=""><button className="btn btn-outline-dark mt-2 mb-2 col-8"><h4>Buscar Referencia</h4></button></NavLink>
           </div>

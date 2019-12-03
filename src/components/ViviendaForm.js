@@ -41,7 +41,7 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="titulo" className="datos-creacion">Titulo</label>
                  <input type="text" 
                  id="titulo"
-                 className="mr-5 p-3 border-warning form-control letra"
+                 className="mr-5 border-warning form-control letra"
                  placeholder="modificar datos ..." 
                  name="titulo"
                  defaultValue={vivienda.titulo}
@@ -80,7 +80,7 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="direccion" className="datos-creacion">Direccion de la vivienda</label>
                 <input type="text" 
                 id="direccion" 
-                className="mr-5 p-3 border-warning form-control letra"
+                className="mr-5 border-warning form-control letra"
                 defaultValue={vivienda.direccion}
                 placeholder="modificar datos ..." 
                 onChange={this.handleUpdate } 
@@ -91,7 +91,7 @@ export default class ViviendaForm extends Component {
                 <input 
                   type="number"
                   id="precio"
-                  className="mr-5 p-3 border-warning form-control letra"
+                  className="mr-5 border-warning form-control letra"
                   defaultValue={vivienda.precio}
                   placeholder="modificar datos ..." 
                   name= "precio"
@@ -101,7 +101,7 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="metros" className="datos-creacion">Metros de la vivienda</label>
                 <input type="number" 
                 id="metros" 
-                className="mr-5 p-3 border-warning form-control letra"
+                className="mr-5 border-warning form-control letra"
                 defaultValue={vivienda.metros}
                 onChange={this.handleUpdate } 
                 name= "metros" 
@@ -111,7 +111,7 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="numHab" className="datos-creacion">Habitaciones</label>
                 <input type="number" 
                 id="numHab" 
-                className="mr-5 p-3 border-warning form-control letra"
+                className="mr-5 border-warning form-control letra"
                 defaultValue={vivienda.numHab}
                 onChange={this.handleUpdate } 
                 name= "numHab" 
@@ -121,7 +121,7 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="numAseos" className="datos-creacion">Baños</label>
                 <input type="number" 
                 id="numAseos" 
-                className="mr-5 p-3 border-warning form-control letra"
+                className="mr-5 border-warning form-control letra"
                 defaultValue={vivienda.numAseos}
                 onChange={this.handleUpdate } 
                 name= "numAseos" 
@@ -131,7 +131,7 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="numGarajes" className="datos-creacion">Numero de garajes</label>               
                 <input type="number" 
                 id="numGarajes" 
-                className="mr-5 p-3 border-warning form-control letra"
+                className="mr-5 border-warning form-control letra"
                 defaultValue={vivienda.numGarajes}
                 placeholder="modificar datos ..." 
                 onChange={this.handleUpdate } 
@@ -139,14 +139,14 @@ export default class ViviendaForm extends Component {
                 />
 
                 <label htmlFor="jardin" className="datos-creacion">Jardin</label>
-                <select name="jardin" className="border-warning form-control letra" onChange={this.handleUpdate } defaultValue={vivienda.jardin}  id="jardin">
+                <select name="jardin" className="mr-5 border-warning form-control letra" onChange={this.handleUpdate } defaultValue={vivienda.jardin}  id="jardin">
                   <option value=''>modificar datos ...</option>
                   <option value='Si'>Si</option>
                   <option value='No'>No</option>
                 </select>
 
                 <label htmlFor="piscina" className="datos-creacion">Piscina</label>
-                <select name="piscina" className="border-warning form-control letra" onChange={this.handleUpdate } defaultValue={vivienda.piscina} id="piscina">
+                <select name="piscina" className="mr-5 border-warning form-control letra" onChange={this.handleUpdate } defaultValue={vivienda.piscina} id="piscina">
                   <option value=''>modificar datos ...</option>  
                   <option value='Si'>Si</option>
                   <option value='No'>No</option>
@@ -155,8 +155,8 @@ export default class ViviendaForm extends Component {
                 <label htmlFor="descripcion" className="datos-creacion">Descripcion de la vivienda</label>
                 <textarea type="text" 
                 id="descripcion" 
-                className="mr-5 p-3 border-warning form-control letra"
-                cols="100" rows ="5"
+                className="mr-5 border-warning form-control letra"
+                cols="100" rows ="3"
                 defaultValue={vivienda.descripcion}
                 onChange={this.handleUpdate } 
                 name= "descripcion" 
@@ -168,7 +168,7 @@ export default class ViviendaForm extends Component {
                <label htmlFor="nombrePropietario" className="datos-creacion">Nombre del propietario</label>
                <input type="text" 
                id="nombrePropietario" 
-               className="mr-5 p-3 border-warning form-control letra"
+               className="mr-5 border-warning form-control letra"
                placeholder="modificar datos ..." 
                defaultValue={vivienda.nombrePropietario}
                onChange={this.handleUpdate } 
@@ -178,7 +178,7 @@ export default class ViviendaForm extends Component {
                <label htmlFor="telefonoPropietario" className="datos-creacion">TelefonoPropietario</label>
                <input type="text" 
                id="telefonoPropietario" 
-               className="mr-5 p-3 border-warning form-control letra"
+               className="mr-5 border-warning form-control letra"
                placeholder="modificar datos ..." 
                defaultValue={vivienda.telefonoPropietario}
                onChange={this.handleUpdate } 
@@ -188,7 +188,7 @@ export default class ViviendaForm extends Component {
                <label htmlFor="mailPropietario" className="datos-creacion">Mail del propietario</label>
                <input type="email" 
                id="mailPropietario" 
-               className="mr-5 p-3 border-warning form-control letra"
+               className="mr-5 border-warning form-control letra"
                placeholder="modificar datos ..." 
                defaultValue={vivienda.mailPropietario}
                onChange={this.handleUpdate } 
@@ -197,7 +197,7 @@ export default class ViviendaForm extends Component {
 
               <label htmlFor="lat" className="datos-creacion">Latitud</label>
               <input type="text" 
-              id="lat" className="mr-5 p-3 border-warning form-control letra" 
+              id="lat" className="mr-5 border-warning form-control letra" 
               placeholder="" 
               onChange={this.handleUpdate } 
               name= "lat" 
@@ -205,7 +205,7 @@ export default class ViviendaForm extends Component {
 
               <label htmlFor="long" className="datos-creacion">Longitud</label>
              <input type="text" 
-             id="long" className="mr-5 p-3 border-warning form-control letra" 
+             id="long" className="mr-5 border-warning form-control letra" 
              placeholder="" 
              onChange={this.handleUpdate } 
              name= "long" 
